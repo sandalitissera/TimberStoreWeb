@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sudharma Premium Timber Products</title>
+    <link rel="icon" type="image/png" href="../logo/logo1.png" />
+    <link rel="stylesheet" href="../css/quote.css">
+    <script src="../js/quote.js" defer></script>
+
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li><a href="../html/gallery.html">Woods</a></li>
+            <li><a href="../html/price&services.html">Pricing Range</a></li>
+            <li><a href="../html/contactus.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">CONTACT US</h1>
+            <p class="hero-subtitle">Get in touch for quotes, consultations, or any timber-related inquiries</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2 class="section-title">Get Your Quote Today</h2>
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <h3 class="info-title">Contact Information</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Address</h4>
+                        <p>123 Timber Avenue<br>Woodcraft District<br>Colombo 07, Western Province</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+94123456789">+94 12 345 6789</a></p>
+                        <p><a href="tel:+94987654321">+94 98 765 4321</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@sudharmatiber.lk">info@sudharmatimber.lk</a></p>
+                        <p><a href="mailto:quotes@sudharmatimber.lk">quotes@sudharmatimber.lk</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-details">
+                        <h4>Website</h4>
+                        <p><a href="https://www.sudharmatimber.lk">www.sudharmatimber.lk</a></p>
+                    </div>
+                </div>
+
+                <div class="business-hours">
+                    <h4 class="hours-title">Business Hours</h4>
+                    <div class="hours-item">
+                        <span class="day">Monday - Friday</span>
+                        <span class="time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Saturday</span>
+                        <span class="time">9:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Sunday</span>
+                        <span class="time">Closed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3 class="form-title">Request a Quote</h3>
+                
+                <div id="successMessage" class="success-message">
+                    Thank you for your inquiry! We'll get back to you within 24 hours.
+                </div>
+                
+                <div id="errorMessage" class="error-message">
+                    Please fill in all required fields correctly.
+                </div>
+
+                <form id="quoteForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectType">Project Type *</label>
+                        <select id="projectType" name="projectType" required>
+                            <option value="">Select Project Type</option>
+                            <option value="construction">Construction</option>
+                            <option value="furniture">Furniture Making</option>
+                            <option value="renovation">Renovation</option>
+                            <option value="decking">Decking/Outdoor</option>
+                            <option value="commercial">Commercial Project</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="timberType">Timber Type</label>
+                            <select id="timberType" name="timberType">
+                                <option value="">Select Timber Type</option>
+                                <option value="teak">Teak</option>
+                                <option value="mahogany">Mahogany</option>
+                                <option value="pine">Pine</option>
+                                <option value="oak">Oak</option>
+                                <option value="cedar">Cedar</option>
+                                <option value="mixed">Mixed/Various</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Estimated Quantity (m³)</label>
+                            <input type="number" id="quantity" name="quantity" min="0" step="0.1" placeholder="e.g., 2.5">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select Timeline</option>
+                            <option value="urgent">Urgent (Within 1 week)</option>
+                            <option value="soon">Soon (1-2 weeks)</option>
+                            <option value="month">Within a month</option>
+                            <option value="flexible">Flexible timeline</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget Range (USD)</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select Budget Range</option>
+                            <option value="under500">Under $500</option>
+                            <option value="500-1000">$500 - $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="over10000">Over $10,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details & Requirements *</label>
+                        <textarea id="message" name="message" placeholder="Please describe your project, specific requirements, dimensions, and any other relevant details..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Send Quote Request
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h2 class="section-title">Visit Our Location</h2>
+        <div class="map-container">
+            <p style="color: #cccccc; font-size: 1.1rem; margin-bottom: 20px;">
+                Visit our timber yard to see our products firsthand and discuss your project requirements
+            </p>
+            <div class="map-placeholder">
+                <div class="map-placeholder-text">
+                    📍 Interactive Map<br>
+                    123 Timber Avenue, Colombo 07<br>
+                    <small style="color: #cccccc;">Map integration available</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Sudharma Timber Store. All rights reserved. | Sustainable • Professional • Reliable</p>
+    </footer>
+</body>
+</html>

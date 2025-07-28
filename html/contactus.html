@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sudharma Premium Timber Products</title>
+    <link rel="icon" type="image/png" href="../logo/logo1.png" />
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/contactus.css">
+    <script src="../js/contactus.js" defer></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li><a href="../html/gallery.html">Woods</a></li>
+            <li><a href="../html/price&services.html">Price Range</a></li>
+            <li><a href="../html/contactus.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/index.html" onclick="toggleMenu()">Home</a>
+        <a href="./aboutus.html" onclick="toggleMenu()">About Us</a>
+        <a href="./gallery.html" onclick="toggleMenu()">Woods</a>
+        <a href="./price&services.html" onclick="toggleMenu()">Price Range</a>
+        <a href="./contactus.html" onclick="toggleMenu()">Contact Us</a>
+    </div>
+
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">GET IN TOUCH</h1>
+            <p class="hero-subtitle">Let's bring your wood project to life</p>
+        </div>
+    </section>
+
+    <section class="contact-container">
+        <div class="contact-grid">
+            <div class="contact-form-section">
+                <h2>Send us a message</h2>
+                <p>Whether you're planning a small DIY project or a large commercial build, our team is here to help. Fill out the form below and we'll get back to you within 24 hours.</p>
+                
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" name="projectType">
+                            <option value="">Select a project type</option>
+                            <option value="flooring">Flooring</option>
+                            <option value="furniture">Custom Furniture</option>
+                            <option value="construction">Construction/Framing</option>
+                            <option value="cabinets">Kitchen Cabinets</option>
+                            <option value="decking">Outdoor Decking</option>
+                            <option value="restoration">Restoration Work</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Estimated Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="under-1000">Under $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000-15000">$5,000 - $15,000</option>
+                            <option value="15000-plus">$15,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">When do you need this?</option>
+                            <option value="asap">ASAP</option>
+                            <option value="1-month">Within 1 month</option>
+                            <option value="2-3months">2-3 months</option>
+                            <option value="3-6months">3-6 months</option>
+                            <option value="planning">Just planning ahead</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Please describe your project in detail. Include dimensions, wood preferences, finish requirements, and any special considerations..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info-section">
+                <div class="contact-info-card">
+                    <h3><span class="icon">📍</span> Visit Our Showroom</h3>
+                    <p>123 Timber Lane</p>
+                    <p>Woodcraft District, WC 12345</p>
+                    <p style="margin-top: 15px; color: #d4a574;">Come see our extensive selection of wood samples and finished projects in person. Our showroom features live-edge slabs, reclaimed pieces, and examples of our craftsmanship.</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <h3><span class="icon">📞</span> Call Us Direct</h3>
+                    <p><strong>Main Line:</strong> (555) 123-WOOD</p>
+                    <p><strong>Orders:</strong> (555) 123-9663</p>
+                    <p><strong>Emergency:</strong> (555) 123-HELP</p>
+                    <p style="margin-top: 15px; color: #d4a574;">Speak directly with our wood experts. We're here to answer questions about species selection, pricing, and project planning.</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <h3><span class="icon">📩</span> Email Us</h3>
+                    <p><strong>General Info:</strong> info@sudharmatimber.com</p>
+                    <p><strong>Orders:</strong> orders@sudharmatimber.com</p>
+                    <p><strong>Quotes:</strong> quotes@sudharmatimber.com</p>
+                    <p style="margin-top: 15px; color: #d4a574;">For detailed quotes, please include your project specifications, timeline, and any reference images.</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <h3><span class="icon">💬</span> Live Chat Support</h3>
+                    <p>Available Monday - Friday: 9 AM - 6 PM</p>
+                    <p>Saturday: 10 AM - 4 PM</p>
+                    <p style="margin-top: 15px; color: #d4a574;">Get instant answers to quick questions through our website chat feature. Perfect for checking availability and getting fast quotes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <h2 class="section-title">Find Us</h2>
+            <p style="color: #cccccc; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Located in the heart of the Woodcraft District, our 15,000 sq ft facility houses our showroom, warehouse, and custom millwork shop. Easy parking and loading dock access available.
+            </p>
+            <div class="map-placeholder">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🗺️</div>
+                    <p>Interactive Map Coming Soon</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">123 Timber Lane, Woodcraft District, WC 12345</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hours-section">
+        <div class="hours-container">
+            <h2 class="section-title">Business Hours</h2>
+            <p style="color: #cccccc; margin-bottom: 40px;">We're open seven days a week to serve all your timber needs. Extended hours available for large commercial deliveries.</p>
+            
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <h4>Showroom & Retail</h4>
+                    <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</p>
+                    <p><strong>Saturday:</strong> 8:00 AM - 5:00 PM</p>
+                    <p><strong>Sunday:</strong> 10:00 AM - 4:00 PM</p>
+                </div>
+                
+                <div class="hours-card">
+                    <h4>Warehouse & Pickup</h4>
+                    <p><strong>Monday - Friday:</strong> 7:00 AM - 6:00 PM</p>
+                    <p><strong>Saturday:</strong> 8:00 AM - 5:00 PM</p>
+                    <p><strong>Sunday:</strong> 10:00 AM - 4:00 PM</p>
+                </div>
+                
+                <div class="hours-card">
+                    <h4>Delivery Service</h4>
+                    <p><strong>Monday - Friday:</strong> 8:00 AM - 5:00 PM</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 3:00 PM</p>
+                    <p><strong>Sunday:</strong> By appointment</p>
+                </div>
+            </div>
+            
+            <div class="emergency-contact">
+                <h3>🚨 Emergency & After Hours</h3>
+                <p><strong>Emergency Line:</strong> (555) 123-HELP</p>
+                <p>For urgent project needs, equipment breakdowns, or time-sensitive deliveries, our emergency line is monitored 24/7.</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #d4a574;">Additional fees may apply for after-hours service.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo">SUDHARMA TIMBER</div>
+                    <p class="footer-tagline">Crafting excellence in timber since 1985</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="Instagram">📷</a>
+                    <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    <a href="#" class="social-link" title="YouTube">📺</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#products">Solid Wood Planks</a></li>
+                    <li><a href="index.html#products">Reclaimed Timber</a></li>
+                    <li><a href="index.html#products">Engineered Wood</a></li>
+                    <li><a href="index.html#products">Specialty Woods</a></li>
+                    <li><a href="index.html#products">Custom Millwork</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Wood Sourcing</a></li>
+                    <li><a href="#">Custom Cutting</a></li>
+                    <li><a href="#">Kiln Drying</a></li>
+                    <li><a href="#">Delivery Service</a></li>
+                    <li><a href="#">Project Consultation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Info</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p>123 Timber Lane</p>
+                            <p>Woodcraft District, WC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <p>(555) 123-WOOD</p>
+                            <p>(555) 123-9663</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📩</span>
+                        <div>
+                            <p>info@sudharmatimber.com</p>
+                            <p>orders@sudharmatimber.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕗</span>
+                        <div>
+                            <p>Mon-Sun: 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Sudharma Timber Store. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span>•</span>
+                        <a href="#">Terms of Service</a>
+                        <span>•</span>
+                        <a href="#">Sustainability</a>
+                    </div>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>🌱 Sustainably sourced • FSC Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudharma Premium Timber Products</title>
+    <link rel="icon" type="image/png" href="logo/logo1.png" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="jsfile" href="js/index.js">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <img src="logo/logo2.png" alt="Timber Store Logo" class="logo-img">
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./html/aboutus.html">About Us</a></li>
+            <li><a href="./html/gallery.html">Woods</a></li>
+            <li><a href="./html/price&services.html">Price Range</a></li>
+            <li><a href="./html/contactus.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="./index.html" onclick="toggleMenu()">Home</a>
+        <a href="/html/aboutus.html" onclick="toggleMenu()">About Us</a>
+        <a href="./html/gallery.html" onclick="toggleMenu()">Woods</a>
+        <a href="./html/price&services.html" onclick="toggleMenu()">Price Range</a>
+        <a href="./html/contactus.html" onclick="toggleMenu()">Contact Us</a>
+    </div>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">SUDHARMA TIMBER STORE</h1>
+            <p class="hero-subtitle">Sustainable Wood Products for Every Project</p>
+            <a href="#products" class="cta-button">Explore Products</a>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2 class="section-title">THE WOOD WE WORK WITH</h2>
+        <div class="products-grid">
+            <div class="product-card" onclick="showProductDetails('Solid Wood Planks')">
+                <h3 class="product-title">Solid Wood Planks</h3>
+                <p class="product-description">Premium oak, beech, and ash planks perfect for flooring and construction projects.</p>
+                <div class="product-price">From $45/m³</div>
+                <div class="product-features">
+                    <span class="feature-tag">Sustainable</span>
+                    <span class="feature-tag">Kiln Dried</span>
+                    <span class="feature-tag">Grade A</span>
+                </div>
+            </div>
+
+            <div class="product-card" onclick="showProductDetails('Reclaimed Timber')">
+                <h3 class="product-title">Reclaimed Timber</h3>
+                <p class="product-description">Beautiful weathered wood with character, perfect for rustic and vintage projects.</p>
+                <div class="product-price">From $65/m³</div>
+                <div class="product-features">
+                    <span class="feature-tag">Eco-Friendly</span>
+                    <span class="feature-tag">Unique Grain</span>
+                    <span class="feature-tag">Historic</span>
+                </div>
+            </div>
+
+            <div class="product-card" onclick="showProductDetails('Engineered Wood')">
+                <h3 class="product-title">Engineered Wood</h3>
+                <p class="product-description">Modern composite materials offering superior strength and stability.</p>
+                <div class="product-price">From $35/m³</div>
+                <div class="product-features">
+                    <span class="feature-tag">Durable</span>
+                    <span class="feature-tag">Consistent</span>
+                    <span class="feature-tag">Cost-Effective</span>
+                </div>
+            </div>
+        </div>
+        <a href="/html/gallery.html" class="cta-button">Explore Woods ▶</a>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">Kitchen Cabinets</div>
+            <div class="gallery-item">Flooring Projects</div>
+            <div class="gallery-item">Custom Furniture</div>
+            <div class="gallery-item">Architectural Elements</div>
+            <div class="gallery-item">Outdoor Decking</div>
+            <div class="gallery-item">Restoration Work</div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="project">Project Type</label>
+                <input type="text" id="project" name="project" placeholder="e.g., Kitchen renovation, flooring, custom furniture">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements..."></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo">BIO CWT</div>
+                    <p class="footer-tagline">Crafting excellence in timber since 1985</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="Instagram">📷</a>
+                    <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    <a href="#" class="social-link" title="YouTube">📺</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#products">Solid Wood Planks</a></li>
+                    <li><a href="#products">Reclaimed Timber</a></li>
+                    <li><a href="#products">Engineered Wood</a></li>
+                    <li><a href="#products">Specialty Woods</a></li>
+                    <li><a href="#products">Custom Millwork</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Wood Sourcing</a></li>
+                    <li><a href="#">Custom Cutting</a></li>
+                    <li><a href="#">Kiln Drying</a></li>
+                    <li><a href="#">Delivery Service</a></li>
+                    <li><a href="#">Project Consultation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Info</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p>123 Timber Lane</p>
+                            <p>Woodcraft District, WC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <p>(555) 123-WOOD</p>
+                            <p>(555) 123-9663</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📩</span>
+                        <div>
+                            <p>info@biocwt.com</p>
+                            <p>orders@biocwt.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕗</span>
+                        <div>
+                            <p>Mon-Sun: 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 BIO CWT. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span>•</span>
+                        <a href="#">Terms of Service</a>
+                        <span>•</span>
+                        <a href="#">Sustainability</a>
+                    </div>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>🌱 Sustainably sourced • FSC Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

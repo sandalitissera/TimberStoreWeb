@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudharma Timber Store - Gallery & Shop</title>
+    <link rel="icon" type="image/png" href="../logo/logo1.png" />
+    <script src="../js/gallery.js" defer></script>
+    <link rel="stylesheet" href="../css/gallery.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li><a href="../html/gallery.html">Woods</a></li>
+            <li><a href="../html/price&services.html">Price Range</a></li>
+            <li><a href="../html/contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h3>Search Products</h3>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search timber products...">
+                </div>
+                <h3>Filter by Price</h3>
+                <div class="price-filter">
+                    <div class="price-range">
+                        $<input type="number" class="price-input" id="minPrice" placeholder="0" min="0">
+                        -
+                        $<input type="number" class="price-input" id="maxPrice" placeholder="500" min="0">
+                    </div>
+                </div>
+                <h3>Categories</h3>
+                <div class="category-filter">
+                    <div class="category-item">
+                        <input type="checkbox" id="hardwood" value="Hardwood">
+                        <label for="hardwood">Hardwood</label>
+                    </div>
+                    <div class="category-item">
+                        <input type="checkbox" id="softwood" value="Softwood">
+                        <label for="softwood">Softwood</label>
+                    </div>
+                    <div class="category-item">
+                        <input type="checkbox" id="imported" value="Imported">
+                        <label for="imported">Imported</label>
+                    </div>
+                </div>
+                <!-- Changed button to navigate to contactus.html -->
+                <button class="filter-button" onclick="window.location.href='../html/contactus.html'">Apply Filters</button>
+            </div>
+        </aside>
+        <main class="gallery-content">
+            <div class="gallery-header">
+                <h1 class="gallery-title">Our Gallery</h1>
+                <div class="header-controls">
+                    <select class="sort-dropdown" id="sortSelect" onchange="sortProducts()">
+                        <option value="default">Default Sorting</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                    </select>
+                    <!-- Removed Cart Button -->
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            <div class="no-results" id="noResults" style="display: none;">
+                No products found matching your criteria.
+            </div>
+        </main>
+    </div>
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-image" id="modalImage"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-description" id="modalDescription"></p>
+            <div class="specifications" id="modalSpecs"></div>
+            <div class="product-price">
+                <span class="current-price" id="modalPrice"></span>
+                <span class="original-price" id="modalOriginalPrice"></span>
+            </div>
+            <!-- Removed Add to Cart Button from Modal -->
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo">SUDHARMA TIMBER</div>
+                    <p class="footer-tagline">Crafting excellence in timber since 1985</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="Instagram">📷</a>
+                    <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    <a href="#" class="social-link" title="YouTube">📺</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#products">Hardwood Planks</a></li>
+                    <li><a href="#products">Softwood Timber</a></li>
+                    <li><a href="#products">Specialty Woods</a></li>
+                    <li><a href="#products">Custom Millwork</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Wood Sourcing</a></li>
+                    <li><a href="#">Custom Cutting</a></li>
+                    <li><a href="#">Kiln Drying</a></li>
+                    <li><a href="#">Delivery Service</a></li>
+                    <li><a href="#">Project Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Info</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p>123 Timber Lane</p>
+                            <p>Woodcraft District, WC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <p>(555) 123-WOOD</p>
+                            <p>(555) 123-9663</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📩</span>
+                        <div>
+                            <p>info@sudharmatiber.com</p>
+                            <p>orders@sudharmatiber.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕗</span>
+                        <div>
+                            <p>Mon-Sun: 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Sudharma Timber Store. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span>•</span>
+                        <a href="#">Terms of Service</a>
+                        <span>•</span>
+                        <a href="#">Sustainability</a>
+                    </div>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>🌱 Sustainably sourced • FSC Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

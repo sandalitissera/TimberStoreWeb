@@ -1,0 +1,308 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudharma Timber Store - Cart</title>
+    <link rel="icon" type="image/png" href="../logo/logo1.png" />
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../js/cart.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="../html/aboutus.html">About Us</a></li>
+            <li><a href="../html/gallery.html">Woods</a></li>
+            <li><a href="../html/price&services.html">Price Range</a></li>
+            <li><a href="../html/contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="cart-header">
+            <h1 class="cart-title">Your Shopping Cart</h1>
+            <a href="../html/gallery.html" class="continue-shopping">Continue Shopping</a>
+        </div>
+
+        <div class="cart-content">
+            <div class="cart-items" id="cartItemsContainer">
+                 Cart items will be populated here -->
+            <!--</div>
+
+            <div class="cart-summary">
+                <h2 class="summary-title">Order Summary</h2>
+                <div class="summary-row">
+                    <span class="summary-label">Subtotal</span>
+                    <span class="summary-value" id="subtotalValue">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Shipping</span>
+                    <span class="summary-value">Free</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Tax</span>
+                    <span class="summary-value" id="taxValue">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span class="total-label">Total</span>
+                    <span class="total-value" id="totalValue">$0.00</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="paymentModal" class="payment-modal">
+        <div class="payment-container">
+            <button class="payment-close" id="closePaymentModal">&times;</button>
+            
+            // Payment Steps -->
+            <!--<div class="payment-steps">
+                <div class="payment-step active" id="step1">
+                    <div class="step-circle">1</div>
+                    <div class="step-title">Billing Info</div>
+                </div>
+                <div class="payment-step" id="step2">
+                    <div class="step-circle">2</div>
+                    <div class="step-title">Payment</div>
+                </div>
+                <div class="payment-step" id="step3">
+                    <div class="step-circle">3</div>
+                    <div class="step-title">Confirmation</div>
+                </div>
+            </div>
+
+            // Step 1: Billing Information -->
+            <!--div id="billingForm" class="payment-form active">
+                <h2 class="payment-title">Billing Information</h2>
+                
+                <form id="billingInfoForm">
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <div class="error-message" id="firstNameError">Please enter your first name</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <div class="error-message" id="lastNameError">Please enter your last name</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="error-message" id="phoneError">Please enter your phone number</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <input type="text" id="address" name="address" required>
+                            <div class="error-message" id="addressError">Please enter your address</div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" required>
+                                <div class="error-message" id="cityError">Please enter your city</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="postalCode">Postal Code *</label>
+                                <input type="text" id="postalCode" name="postalCode" required>
+                                <div class="error-message" id="postalCodeError">Please enter your postal code</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn-secondary" id="closeBilling">Cancel</button>
+                        <button type="button" class="btn-primary" id="nextToPayment">Continue to Payment</button>
+                    </div>
+                </form>
+            </div>
+
+            //tep 2: Payment Information -->
+            <!-- id="paymentForm" class="payment-form">
+                <h2 class="payment-title">Payment Details</h2>
+                
+                <div class="form-section">
+                    <div class="section-title">Choose Payment Method</div>
+                    <div class="payment-methods">
+                        <div class="payment-method selected" data-method="card">
+                            <div class="payment-method-icon">💳</div>
+                            <div class="payment-method-name">Credit/Debit Card</div>
+                        </div>
+                        <div class="payment-method" data-method="paypal">
+                            <div class="payment-method-icon">📱</div>
+                            <div class="payment-method-name">PayPal</div>
+                        </div>
+                        <div class="payment-method" data-method="bank">
+                            <div class="payment-method-icon">🏦</div>
+                            <div class="payment-method-name">Bank Transfer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="paymentInfoForm">
+                    <div id="cardPaymentFields" class="form-section">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number *</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                            <div class="error-message" id="cardNumberError">Please enter a valid card number</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardName">Name on Card *</label>
+                            <input type="text" id="cardName" name="cardName" required>
+                            <div class="error-message" id="cardNameError">Please enter the name on card</div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date *</label>
+                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                                <div class="error-message" id="expiryDateError">Please enter expiry date</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV *</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                                <div class="error-message" id="cvvError">Please enter CVV</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-summary-payment">
+                        <div class="section-title">Order Summary</div>
+                        <div id="paymentSummaryItems"></div>
+                        <div class="summary-total">
+                            <div class="summary-item">
+                                <span>Total Amount</span>
+                                <span id="paymentTotal">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn-secondary" id="backToBilling">Back</button>
+                        <button type="button" class="btn-primary" id="processPayment">
+                            <span id="paymentButtonText">Process Payment</span>
+                            <span id="paymentButtonSpinner" class="loading-spinner" style="display: none;"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+           //tep 3: Confirmation -->
+            <!-- id="confirmationForm" class="payment-form">
+                <div class="success-message">
+                    <div class="success-icon">✅</div>
+                    <div class="success-title">Payment Successful!</div>
+                    <div class="success-text">Thank you for your order. Your payment has been processed successfully.</div>
+                    <div class="success-text">You will receive a confirmation email shortly.</div>
+                    <div class="order-id" id="orderConfirmationId">Order ID: #</div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-primary" id="closeSuccessModal">Continue Shopping</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    // Footer Section -->
+   <!-- <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo">SUDHARMA TIMBER</div>
+                    <p class="footer-tagline">Crafting excellence in timber since 1985</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="Instagram">📷</a>
+                    <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    <a href="#" class="social-link" title="YouTube">📺</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#products">Hardwood Planks</a></li>
+                    <li><a href="#products">Softwood Timber</a></li>
+                    <li><a href="#products">Specialty Woods</a></li>
+                    <li><a href="#products">Custom Millwork</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Wood Sourcing</a></li>
+                    <li><a href="#">Custom Cutting</a></li>
+                    <li><a href="#">Kiln Drying</a></li>
+                    <li><a href="#">Delivery Service</a></li>
+                    <li><a href="#">Project Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Info</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p>123 Timber Lane</p>
+                            <p>Woodcraft District, WC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <p>(555) 123-WOOD</p>
+                            <p>(555) 123-9663</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📩</span>
+                        <div>
+                            <p>info@sudharmatiber.com</p>
+                            <p>orders@sudharmatiber.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕗</span>
+                        <div>
+                            <p>Mon-Sun: 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Sudharma Timber Store. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span>•</span>
+                        <a href="#">Terms of Service</a>
+                        <span>•</span>
+                        <a href="#">Sustainability</a>
+                    </div>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>🌱 Sustainably sourced • FSC Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> -->
