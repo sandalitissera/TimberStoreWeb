@@ -23,6 +23,7 @@ body {
     align-items: center;
     z-index: 1000;
     border-bottom: 1px solid #333;
+    transition: all 0.3s ease;
 }
 
 .logo-img {
