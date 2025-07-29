@@ -17,12 +17,12 @@ body {
     top: 0;
     width: 100%;
     backdrop-filter: blur(10px);
-    padding: 15px 50px;
+    background: rgba(26, 26, 26, 0.9);
+    padding: 8px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 1px solid #333;
     transition: all 0.3s ease;
 }
 
@@ -30,11 +30,6 @@ body {
     width: 150px;
     height: 50px;
     object-fit: contain;
-    color: #d4a574;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
 }
 
 .nav-links {
@@ -117,30 +112,44 @@ body {
 }
 
 .pricing-container {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
-.timber-category {
-    margin-bottom: 60px;
-    background: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.wood-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
-.category-title {
-    font-size: 2.2rem;
+.wood-type-card {
+    background: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wood-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(65, 52, 39, 0.2);
+}
+
+.wood-type-title {
+    font-size: 1.8rem;
     color: #d4a574;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
     font-weight: 600;
+    border-bottom: 2px solid rgba(212, 165, 116, 0.3);
+    padding-bottom: 10px;
 }
 
 .pricing-table {
     overflow-x: auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 table {
@@ -148,38 +157,48 @@ table {
     border-collapse: collapse;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 20px 15px;
+    padding: 12px 8px;
     text-align: center;
     border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+    font-size: 0.9rem;
 }
 
 th {
     background: linear-gradient(45deg, #d4a574, #b8925f);
     color: #1a1a1a;
     font-weight: 600;
-    font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
 }
 
 td {
     color: #ffffff;
-    font-size: 1rem;
     transition: background 0.3s ease;
 }
 
 tr:hover td {
-    background: rgba(212, 165, 116, 0.1);
+    background: rgba(231, 226, 224, 0.3);
+}
+
+.teak-pricing{
+    margin-top: 40px;
 }
 
 .price-cell {
     background: linear-gradient(135deg, #d4a574, #e6b885);
     color: #1a1a1a;
     font-weight: 700;
-    font-size: 1.2rem;
+}
+
+.currency {
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
 .services-section {
@@ -343,17 +362,22 @@ tr:hover td {
         padding: 50px 20px;
     }
 
-    .timber-category {
-        padding: 25px;
+    .wood-types-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .category-title {
-        font-size: 1.8rem;
+    .wood-type-card {
+        padding: 20px;
+    }
+
+    .wood-type-title {
+        font-size: 1.5rem;
     }
 
     th, td {
-        padding: 15px 8px;
-        font-size: 0.9rem;
+        padding: 8px 4px;
+        font-size: 0.8rem;
     }
 
     .services-grid {

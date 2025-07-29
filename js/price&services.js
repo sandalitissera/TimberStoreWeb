@@ -1,14 +1,19 @@
 // Mobile menu toggle
 function toggleMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelector('.nav-links');
     
-    if (mobileMenu.style.display === 'flex') {
-        mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
+    if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
     } else {
-        mobileMenu.style.display = 'flex';
-        hamburger.classList.add('active');
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '70px';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.background = 'rgba(26, 26, 26, 0.95)';
+        navLinks.style.padding = '20px';
     }
 }
 
@@ -53,7 +58,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.timber-category, .service-card');
+    const animatedElements = document.querySelectorAll('.wood-type-card, .service-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';

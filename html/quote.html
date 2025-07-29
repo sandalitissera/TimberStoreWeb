@@ -77,16 +77,8 @@
                 <div class="business-hours">
                     <h4 class="hours-title">Business Hours</h4>
                     <div class="hours-item">
-                        <span class="day">Monday - Friday</span>
+                        <span class="day">Monday - Sunday</span>
                         <span class="time">8:00 AM - 6:00 PM</span>
-                    </div>
-                    <div class="hours-item">
-                        <span class="day">Saturday</span>
-                        <span class="time">9:00 AM - 4:00 PM</span>
-                    </div>
-                    <div class="hours-item">
-                        <span class="day">Sunday</span>
-                        <span class="time">Closed</span>
                     </div>
                 </div>
             </div>
@@ -137,24 +129,19 @@
                         </select>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="timberType">Timber Type</label>
-                            <select id="timberType" name="timberType">
-                                <option value="">Select Timber Type</option>
-                                <option value="teak">Teak</option>
-                                <option value="mahogany">Mahogany</option>
-                                <option value="pine">Pine</option>
-                                <option value="oak">Oak</option>
-                                <option value="cedar">Cedar</option>
-                                <option value="mixed">Mixed/Various</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity">Estimated Quantity (m³)</label>
-                            <input type="number" id="quantity" name="quantity" min="0" step="0.1" placeholder="e.g., 2.5">
-                        </div>
+                    <div class="form-group">
+                        <label for="timberType">Timber Type</label>
+                        <select id="timberType" name="timberType">
+                            <option value="">Select Timber Type</option>
+                            <option value="teak">Teak</option>
+                            <option value="mahogany">Mahogany</option>
+                            <option value="pine">Pine</option>
+                            <option value="oak">Oak</option>
+                            <option value="cedar">Cedar</option>
+                            <option value="mixed">Mixed/Various</option>
+                        </select>
                     </div>
+
 
                     <div class="form-group">
                         <label for="timeline">Project Timeline</label>
@@ -168,14 +155,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="budget">Budget Range (USD)</label>
+                        <label for="budget">Budget Range (LKR)</label>
                         <select id="budget" name="budget">
                             <option value="">Select Budget Range</option>
-                            <option value="under500">Under $500</option>
-                            <option value="500-1000">$500 - $1,000</option>
-                            <option value="1000-5000">$1,000 - $5,000</option>
-                            <option value="5000-10000">$5,000 - $10,000</option>
-                            <option value="over10000">Over $10,000</option>
+                            <option value="under500">Under LKR 5,000</option>
+                            <option value="500-1000">LKR 5,000 - LKR 10,000</option>
+                            <option value="1000-5000">LKR 10,000 - LKR 50,000</option>
+                            <option value="5000-10000">LKR 50,000 - LKR 100,000</option>
+                            <option value="over10000">Over LKR 100,000</option>
                         </select>
                     </div>
 
