@@ -22,6 +22,7 @@ body {
     align-items: center;
     z-index: 1000;
     border-bottom: 1px solid #333;
+    background: rgba(26, 26, 26, 0.9);
 }
 
 .logo-img {
@@ -114,6 +115,16 @@ body {
     border-radius: 5px;
     color: #ffffff;
     text-align: center;
+    font-size: 0.9rem;
+}
+
+.price-input:focus {
+    outline: none;
+    border-color: #d4a574;
+}
+
+.price-range span {
+    color: #cccccc;
 }
 
 .category-filter {
@@ -170,19 +181,6 @@ body {
     gap: 20px;
 }
 
-/* Removed .cart-button styles */
-
-/* Removed .cart-count styles */
-
-@media (max-width: 768px) {
-    .header-controls {
-        flex-direction: column;
-        gap: 15px;
-        align-items: stretch;
-    }
-    /* Removed .cart-button media query styles */
-}
-
 .gallery-title {
     font-size: 2.5rem;
     color: #d4a574;
@@ -221,7 +219,6 @@ body {
 .product-image {
     width: 100%;
     height: 200px;
-    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><defs><pattern id="woodgrain" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23654321"/><path d="M 0,5 Q 10,3 20,5 Q 10,7 0,5" fill="%23543010"/><path d="M 0,10 Q 10,8 20,10 Q 10,12 0,10" fill="%23432010"/><path d="M 0,15 Q 10,13 20,15 Q 10,17 0,15" fill="%23543010"/></pattern></defs><rect width="400" height="200" fill="url(%23woodgrain)"/></svg>'); */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -263,22 +260,20 @@ body {
 }
 
 .product-price {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     margin-bottom: 15px;
 }
 
 .current-price {
-    font-size: 1.3rem;
     color: #d4a574;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
 .original-price {
-    font-size: 1rem;
     color: #999;
     text-decoration: line-through;
+    margin-left: 8px;
+    font-size: 1rem;
 }
 
 .product-features {
@@ -295,8 +290,6 @@ body {
     border-radius: 12px;
     font-size: 0.7rem;
 }
-
-/* Removed .add-to-cart styles */
 
 .no-results {
     text-align: center;
@@ -344,7 +337,6 @@ body {
 .modal-image {
     width: 100%;
     height: 300px;
-    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><pattern id="woodgrain2" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="%23654321"/><path d="M 0,5 Q 10,3 20,5 Q 10,7 0,5" fill="%23543010"/><path d="M 0,10 Q 10,8 20,10 Q 10,12 0,10" fill="%23432010"/><path d="M 0,15 Q 10,13 20,15 Q 10,17 0,15" fill="%23543010"/></pattern></defs><rect width="400" height="300" fill="url(%23woodgrain2)"/></svg>'); */
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -367,6 +359,23 @@ body {
     margin-bottom: 20px;
 }
 
+.modal-price {
+    margin-bottom: 20px;
+}
+
+.modal-price .current-price {
+    color: #d4a574;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal-price .original-price {
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
 .specifications {
     background: #3a3a3a;
     padding: 20px;
@@ -386,7 +395,6 @@ body {
     color: #d4a574;
 }
 
-/* Footer Styles */
 .footer {
     background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
     color: #ffffff;
@@ -413,8 +421,15 @@ body {
 }
 
 .footer-logo .logo {
-    font-size: 28px;
-    margin-bottom: 10px;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footer-logo .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .footer-tagline {

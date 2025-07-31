@@ -117,6 +117,66 @@ body {
     box-shadow: 0 10px 20px rgba(212, 165, 116, 0.3);
 }
 
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.timber-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .timber-image {
+    transform: scale(1.05);
+}
+
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #c02814;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.product-card {
+    background: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-image {
+        height: 180px;
+    }
+    
+    .product-card {
+        padding: 20px;
+    }
+    
+}
+
 .products-section {
     padding: 100px 50px;
     background: #2a2a2a;
