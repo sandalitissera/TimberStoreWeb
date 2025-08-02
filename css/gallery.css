@@ -53,6 +53,20 @@ body {
     color: #d4a574;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
 .main-container {
     margin-top: 80px;
     padding: 40px 50px;
@@ -561,50 +575,76 @@ body {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 26, 26, 0.95);
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .main-container {
         flex-direction: column;
         padding: 20px;
     }
+    
     .sidebar {
         width: 100%;
         position: static;
         margin-bottom: 30px;
     }
-    .navbar {
-        padding: 15px 20px;
-    }
-    .nav-links {
-        display: none;
-    }
+    
     .gallery-title {
         font-size: 2rem;
     }
+    
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 20px;
     }
+    
     .modal-content {
         width: 95%;
         margin: 5% auto;
         padding: 20px;
         max-height: 85vh;
     }
+    
     .modal {
         padding: 10px 0;
     }
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
         padding: 0 20px;
     }
+    
     .footer-bottom-content {
         padding: 0 20px;
         flex-direction: column;
         text-align: center;
     }
+    
     .footer-bottom-links {
         justify-content: center;
     }
+    
     .social-links {
         justify-content: center;
     }
@@ -614,16 +654,20 @@ body {
     .footer-content {
         gap: 30px;
     }
+    
     .footer-section h4.footer-title {
         font-size: 1.1rem;
     }
+    
     .contact-item {
         flex-direction: column;
         gap: 5px;
     }
+    
     .contact-icon {
         align-self: flex-start;
     }
+    
     .modal-content {
         width: 98%;
         margin: 2% auto;

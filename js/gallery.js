@@ -1,247 +1,382 @@
-// Product data with Sri Lankan wood types and realistic pricing
+// Updated product data with correct specifications from your provided information
 const products = [
     {
+        
         id: 1,
         name: "Albesia Wood",
-        description: "High-quality Albesia wood planks, lightweight and perfect for furniture making and construction projects.",
+        description: "Fast-growing, light yellowish wood with straight grain and smooth texture. Lightweight yet strong for its density, recognized for environmental benefits.",
         category: "Softwood",
-        features: ["Lightweight", "Easy to Work", "Fast Growing"],
-        onSale: true,
-        price: 45,
-        originalPrice: 60,
+        features: ["Lightweight", "Fast Growing", "Sustainable"],
+        onSale: false,
+        price: "LKR 45",
+        priceValue: 45,
         image: "../TimberPhoto/albizia2.jpg",
         specs: {
-            "Material": "Albesia Wood",
-            "Dimensions": "2400mm x 200mm x 25mm",
-            "Moisture Content": "8-12%",
-            "Density": "Low to Medium",
-            "Origin": "Tropical Asia"
+            "Scientific Name": "Albizia falcataria",
+            "Also Known As": "Sengon, Falcataria moluccana",
+            "Color": "Pale yellow, lighter than most pine",
+            "Growth Rate": "Rapid (harvestable in 3-5 years)",
+            "Density": "Low to medium (0.24–0.30 after kiln drying)",
+            "Workability": "Easy to machine, shape, and carve",
+            "Common Uses": "Plywood, furniture, door cores, paper pulp"
         },
     },
     {
         id: 2,
         name: "Ginisapu Timber",
-        description: "Premium Ginisapu wood known for its durability and beautiful grain pattern, ideal for high-end applications.",
+        description: "Fine-textured hardwood with yellowish to brown hue and fragrant flowers prized for perfume.",
         category: "Hardwood",
-        features: ["Luxurious", "Rich Color", "Fine Grain"],
+        features: ["Fine Texture", "Fragrant", "Premium Quality"],
         onSale: false,
-        price: 125,
+        price: "LKR 125",
+        priceValue: 125,
         image: "../TimberPhoto/mahogani.webp",
         specs: {
-            "Material": "Mahogany Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "6-10%",
-            "Density": "Medium to High",
-            "Origin": "Central America"
+            "Scientific Name": "Magnolia champaca",
+            "Also Known As": "Champak",
+            "Color": "Yellow-brown with fine grain",
+            "Growth Rate": "Moderate",
+            "Density": "Medium",
+            "Workability": "Easy to work, holds polish well",
+            "Common Uses": "Furniture, cabinetry, decorative paneling, perfume"
+        }
+    },
+    {
+        id: 3,
+        name: "Attoniya Wood",
+        description: "Lightweight pale wood, good for carving and traditional medicinal applications.",
+        category: "Softwood",
+        features: ["Lightweight", "Easily Carved", "Medicinal Uses"],
+        onSale: false,
+        price: "LKR 35",
+        priceValue: 35,
+        image: "../TimberPhoto/attoniya.jpg",
+        specs: {
+            "Scientific Name": "Alstonia scholaris",
+            "Also Known As": "Blackboard Tree",
+            "Color": "Pale cream to light yellow",
+            "Growth": "Fast-growing evergreen",
+            "Density": "Low density",
+            "Workability": "Easily shaped and carved",
+            "Common Uses": "Pencils, household utensils, boxes, medicinal uses"
+        }
+    },
+    {
+        id: 4,
+        name: "Grandis Wood",
+        description: "Robust, pale yellow to reddish wood with straight grain, used in construction.",
+        category: "Hardwood",
+        features: ["Robust", "Straight Grain", "Construction Grade"],
+        onSale: false,
+        price: "LKR 75",
+        priceValue: 75,
+        image: "../TimberPhoto/grandis.jpeg",
+        specs: {
+            "Scientific Name": "Eucalyptus grandis",
+            "Also Known As": "Rose Gum",
+            "Color": "Pale yellow to pinkish",
+            "Growth": "Fast-growing plantation species",
+            "Density": "Medium to high",
+            "Workability": "Moderate workability",
+            "Common Uses": "Structural timber, beams, flooring, doors, plywood"
+        }
+    },
+    {
+        id: 5,
+        name: "Pinus Wood",
+        description: "Softwood with pale yellow to light brown color, resinous aroma, easy to machine.",
+        category: "Softwood",
+        features: ["Light Color", "Resinous", "Easy to Work"],
+        onSale: false,
+        price: "LKR 28",
+        priceValue: 28,
+        image: "../TimberPhoto/pinus.jpg",
+        specs: {
+            "Scientific Name": "Pinus spp.",
+            "Color": "Pale yellow to light brown",
+            "Aroma": "Resinous aroma",
+            "Growth": "Fast-growing, extensively cultivated",
+            "Density": "Low density",
+            "Workability": "Very easy to cut, shape, and assemble",
+            "Common Uses": "Construction framing, furniture, paneling, paper pulp"
+        }
+    },
+    {
+        id: 6,
+        name: "Kempus Wood",
+        description: "Durable hardwood with termite and fungi resistance, dense with high durability.",
+        category: "Hardwood",
+        features: ["Termite Resistant", "Fungi Resistant", "High Durability"],
+        onSale: false,
+        price: "LKR 95",
+        priceValue: 95,
+        image: "../TimberPhoto/kempus.jpeg",
+        specs: {
+            "Scientific Name": "Koompassia malaccensis",
+            "Density": "Dense timber",
+            "Durability": "High durability",
+            "Pest Resistance": "Resistant to termites and fungi",
+            "Strength": "High strength",
+            "Common Uses": "Flooring, furniture, heavy construction"
+        }
+    },
+    {
+        id: 7,
+        name: "Coconut Wood",
+        description: "Dense, durable timber from coconut palms with natural termite resistance.",
+        category: "Hardwood",
+        features: ["Termite Resistant", "Dense", "Sustainable"],
+        onSale: false,
+        price: "LKR 40",
+        priceValue: 40,
+        image: "../TimberPhoto/coconut.jpg",
+        specs: {
+            "Scientific Name": "Cocos nucifera",
+            "Color": "Light brown with distinctive grain",
+            "Density": "Dense and durable",
+            "Pest Resistance": "Naturally termite-resistant",
+            "Workability": "Good for furniture making",
+            "Common Uses": "Flooring, furniture, light construction"
         }
     },
     {
         id: 9,
-        name: "Coconut Wood",
-        description: "Sustainable coconut palm wood, known for its unique grain patterns and eco-friendly properties, perfect for furniture and decorative items.",
+        name: "Lunumidella Wood",
+        description: "Light to moderate strength wood, often with insecticidal properties in bark and leaves.",
         category: "Hardwood",
-        features: ["Sustainable", "Unique Grain", "Eco-Friendly"],
+        features: ["Insecticidal Properties", "Moderate Strength", "Traditional Use"],
         onSale: false,
-        price: 40,
-        image: "../TimberPhoto/coconut.jpg",
+        price: "LKR 70",
+        priceValue: 70,
+        image: "../TimberPhoto/lunumidella.jpg",
         specs: {
-            "Material": "Coconut Palm Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "8-12%",
-            "Density": "Medium",
-            "Origin": "Sri Lanka"
+            "Scientific Name": "Melia azedarach",
+            "Strength": "Light to moderate strength",
+            "Special Properties": "Insecticidal properties in bark/leaves",
+            "Workability": "Moderately workable",
+            "Traditional Uses": "Medicine applications",
+            "Common Uses": "Furniture, paneling, traditional medicine"
         }
     },
     {
         id: 10,
         name: "Toona",
-        description: "Premium Toona wood with reddish-brown heartwood, highly valued for furniture making and construction due to its durability and workability.",
+        description: "Reddish durable wood prized in furniture and instruments with good stability and attractive grain.",
         category: "Hardwood",
-        features: ["Durable", "Reddish-Brown", "Workable"],
+        features: ["Durable", "Stable", "Attractive Grain"],
         onSale: false,
-        price: 80,
+        price: "LKR 80",
+        priceValue: 80,
         image: "../TimberPhoto/toona.jpg",
         specs: {
-            "Material": "Toona Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "6-10%",
-            "Density": "Medium to High",
-            "Origin": "Asia"
+            "Scientific Name": "Toona ciliata, Toona sinensis",
+            "Also Known As": "Red Cedar, Chinese Mahogany",
+            "Color": "Reddish with attractive grain",
+            "Stability": "Good dimensional stability",
+            "Durability": "High durability",
+            "Common Uses": "Furniture, cabinetry, musical instruments"
         }
     },
     {
         id: 11,
-        name: "Lunumidella Wood",
-        description: "Native Sri Lankan hardwood with excellent strength properties, traditionally used for construction and quality furniture making.",
+        name: "Teak Wood",
+        description: "Highly durable wood naturally resistant to water, rot, and insects with golden-brown color and oily texture.",
         category: "Hardwood",
-        features: ["Strong", "Traditional", "Local Species"],
+        features: ["Water Resistant", "Rot Resistant", "Insect Resistant"],
         onSale: false,
-        price: 70,
-        image: "../TimberPhoto/lunumidella.jpg",
+        price: "LKR 150",
+        priceValue: 150,
+        image: "../TimberPhoto/teak-wood.jpeg",
         specs: {
-            "Material": "Lunumidella Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "8-12%",
-            "Density": "High",
-            "Origin": "Sri Lanka"
+            "Scientific Name": "Tectona grandis",
+            "Color": "Golden-brown color",
+            "Texture": "Oily texture",
+            "Water Resistance": "Highly water resistant",
+            "Rot Resistance": "Naturally rot resistant",
+            "Insect Resistance": "Naturally insect resistant",
+            "Common Uses": "Outdoor furniture, shipbuilding, decking"
         }
     },
     {
         id: 12,
-        name: "JackWood",
-        description: "Jackfruit tree wood with golden-yellow heartwood, known for its termite resistance and suitability for both indoor and outdoor applications.",
+        name: "Kekatong Wood",
+        description: "Heavy hardwood, dense and fungus resistant, suitable for indoor and outdoor use.",
         category: "Hardwood",
-        features: ["Termite Resistant", "Golden Color", "Versatile"],
+        features: ["Heavy Hardwood", "Fungus Resistant", "Indoor/Outdoor"],
         onSale: false,
-        price: 50,
-        image: "../TimberPhoto/jack wood.jpg",
+        price: "LKR 100",
+        priceValue: 100,
+        image: "../TimberPhoto/kekatong.jpeg",
         specs: {
-            "Material": "Jackfruit Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "8-12%",
-            "Density": "Medium",
-            "Origin": "South Asia"
+            "Scientific Name": "Cynometra spp.",
+            "Wood Type": "Heavy hardwood",
+            "Density": "Dense timber",
+            "Fungus Resistance": "Resistant to fungus",
+            "Versatility": "Indoor and outdoor use",
+            "Common Uses": "Flooring, heavy construction, decorative work"
         }
     },
     {
         id: 13,
-        name: "Sooriyamara",
-        description: "Premium Sri Lankan hardwood known for its beautiful grain and excellent finishing properties, ideal for high-end furniture and cabinetry.",
+        name: "JackWood",
+        description: "Light to moderate strength wood, often with insecticidal properties in bark and leaves.",
         category: "Hardwood",
-        features: ["Beautiful Grain", "Premium Quality", "Fine Finish"],
+        features: ["Insecticidal Properties", "Moderate Strength", "Traditional Use"],
         onSale: false,
-        price: 90,
-        image: "../TimberPhoto/suriyamara.webp",
+        price: "LKR 70",
+        priceValue: 70,
+        image: "../TimberPhoto/lunumidella.jpg",
         specs: {
-            "Material": "Sooriyamara Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "6-10%",
-            "Density": "High",
-            "Origin": "Sri Lanka"
+            "Scientific Name": "Melia azedarach",
+            "Strength": "Light to moderate strength",
+            "Special Properties": "Insecticidal properties in bark/leaves",
+            "Workability": "Moderately workable",
+            "Traditional Uses": "Medicine applications",
+            "Common Uses": "Furniture, paneling, traditional medicine"
         }
     },
     {
         id: 14,
-        name: "Durian",
-        description: "Tropical hardwood from durian trees, featuring light-colored wood with good strength properties, suitable for furniture and construction.",
+        name: "Sooriyamara",
+        description: "Medium hardwood often used for furniture; nitrogen-fixing species benefiting soil with decorative grain.",
         category: "Hardwood",
-        features: ["Light Colored", "Strong", "Tropical Species"],
+        features: ["Decorative Grain", "Nitrogen-Fixing", "Medium Hardwood"],
         onSale: false,
-        price: 65,
-        image: "../TimberPhoto/Durian.jpeg",
+        price: "LKR 90",
+        priceValue: 90,
+        image: "../TimberPhoto/suriyamara.webp",
         specs: {
-            "Material": "Durian Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "8-12%",
-            "Density": "Medium to High",
-            "Origin": "Southeast Asia"
+            "Scientific Name": "Albizia lebbeck",
+            "Wood Type": "Medium hardwood",
+            "Grain Pattern": "Decorative grain",
+            "Environmental Benefit": "Nitrogen-fixing species",
+            "Soil Benefit": "Improves soil quality",
+            "Common Uses": "Furniture, turnery, soil improvement"
         }
     },
     {
         id: 15,
-        name: "Mango",
-        description: "Mango wood with attractive grain patterns and warm golden tones, increasingly popular for sustainable furniture and decorative pieces.",
-        category: "Softwood",
-        features: ["Sustainable", "Golden Tones", "Attractive Grain"],
+        name: "Durian",
+        description: "Light wood used locally with traditional medicinal uses in parts of the tree and moderate workability.",
+        category: "Hardwood",
+        features: ["Light Wood", "Medicinal Uses", "Local Species"],
         onSale: false,
-        price: 55,
-        image: "../TimberPhoto/mango-wood.jpg",
+        price: "LKR 65",
+        priceValue: 65,
+        image: "../TimberPhoto/Durian.jpeg",
         specs: {
-            "Material": "Mango Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "8-12%",
-            "Density": "Medium",
-            "Origin": "India/Southeast Asia"
+            "Scientific Name": "Durio zibethinus",
+            "Wood Type": "Light wood",
+            "Workability": "Moderate workability",
+            "Traditional Uses": "Medicinal applications in tree parts",
+            "Usage": "Used locally",
+            "Common Uses": "Construction, paneling, medicinal applications"
         }
     },
     {
         id: 16,
-        name: "Kumbuk",
-        description: "Traditional Sri Lankan hardwood with excellent durability and weather resistance, commonly used for construction and outdoor applications.",
-        category: "Hardwood",
-        features: ["Weather Resistant", "Durable", "Traditional Use"],
+        name: "Mango",
+        description: "Timber from fruiting trees no longer productive, eco-friendly choice with attractive finish and figure.",
+        category: "Softwood",
+        features: ["Eco-Friendly", "Attractive Finish", "Sustainable"],
         onSale: false,
-        price: 60,
-        image: "../TimberPhoto/kumbuk.webp",
+        price: "LKR 55",
+        priceValue: 55,
+        image: "../TimberPhoto/mango-wood.jpg",
         specs: {
-            "Material": "Kumbuk Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "8-12%",
-            "Density": "High",
-            "Origin": "Sri Lanka"
+            "Scientific Name": "Mangifera indica",
+            "Source": "Non-productive fruiting trees",
+            "Sustainability": "Eco-friendly choice",
+            "Appearance": "Attractive finish and figure",
+            "Environmental Impact": "Sustainable harvesting",
+            "Common Uses": "Furniture, musical instruments"
         }
     },
     {
         id: 17,
-        name: "Kasai",
-        description: "Imported hardwood with fine texture and good finishing properties, valued for premium furniture making and interior applications.",
-        category: ["Hardwood", "Imported"], // Keep as Imported
-        features: ["Fine Texture", "Premium Quality", "Good Finish"],
+        name: "Kumbuk",
+        description: "Durable, water-resistant hardwood used in boats and bridges with good rot and water resistance.",
+        category: "Hardwood",
+        features: ["Water Resistant", "Rot Resistant", "Marine Use"],
         onSale: false,
-        price: 105,
-        image: "../TimberPhoto/kasai.jpeg",
+        price: "LKR 60",
+        priceValue: 60,
+        image: "../TimberPhoto/kumbuk.webp",
         specs: {
-            "Material": "Kasai Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "6-10%",
-            "Density": "Medium to High",
-            "Origin": "Africa"
+            "Scientific Name": "Terminalia arjuna",
+            "Durability": "Highly durable",
+            "Water Resistance": "Excellent water resistance",
+            "Rot Resistance": "Good rot resistance",
+            "Traditional Uses": "Traditional medicine",
+            "Common Uses": "Heavy construction, boats, bridges"
         }
     },
     {
-    id: 18,
-    name: "Aja (Durian)",
-    description: "Imported durian variety with superior grain quality and consistency, perfect for high-end furniture and architectural millwork.",
-    category: ["Hardwood", "Imported"], // Keep as Imported
-    features: ["Superior Grain", "Consistent Quality", "Premium Grade"],
-    onSale: false,
-    price: 115,
-    image: "../TimberPhoto/aja.webp",
-    specs: {
-        "Material": "Aja (Durian) Wood",
-        "Dimensions": "2500mm x 200mm x 30mm",
-        "Moisture Content": "6-10%",
-        "Density": "Medium to High",
-        "Origin": "Malaysia"
-    }
+        id: 18,
+        name: "Kasai",
+        description: "Hard, durable timber with medicinal value in Ayurveda, featuring high strength and durability.",
+        category: ["Hardwood", "Imported"],
+        features: ["High Strength", "Medicinal Value", "Ayurvedic Use"],
+        onSale: false,
+        price: "LKR 105",
+        priceValue: 105,
+        image: "../TimberPhoto/kasai.jpeg",
+        specs: {
+            "Scientific Name": "Pterocarpus marsupium",
+            "Strength": "High strength and durability",
+            "Medicinal Value": "Used in Ayurveda",
+            "Medical Applications": "Diabetes and wound treatment",
+            "Durability": "Hard and durable timber",
+            "Common Uses": "Furniture, construction, medicinal applications"
+        }
     },
     {
         id: 19,
-        name: "Kekatong",
-        description: "Malaysian hardwood known for its stability and attractive appearance, excellent for furniture making and interior construction work.",
-        category: ["Hardwood", "Imported"], // Keep as Imported
-        features: ["Stable", "Attractive", "Versatile"],
+        name: "Imported Durian",
+        description: "Imported durian variety with superior grain quality and consistency, perfect for high-end furniture and architectural millwork.",
+        category: ["Hardwood", "Imported"],
+        features: ["Superior Grain", "Consistent Quality", "Premium Grade"],
         onSale: false,
-        price: 100,
-        image: "../TimberPhoto/kekatong.jpeg",
+        price: "LKR 115",
+        priceValue: 115,
+        image: "../TimberPhoto/aja.webp",
         specs: {
-            "Material": "Kekatong Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "6-10%",
-            "Density": "Medium to High",
-            "Origin": "Malaysia"
+            "Scientific Name": "Durio zibethinus (Premium Grade)",
+            "Grade": "Superior imported variety",
+            "Grain Quality": "Superior grain consistency",
+            "Quality Control": "Consistent premium quality",
+            "Origin": "Imported species",
+            "Common Uses": "High-end furniture, architectural millwork"
         }
     },
     {
         id: 20,
         name: "Pine Wood",
-        description: "Classic softwood with light color and straight grain, widely used for construction, furniture, and general carpentry applications.",
-        category: ["Softwood", "Imported"], // This is already correct
-        features: ["Light Color", "Straight Grain", "Versatile"],
+        description: "Heavy hardwood, dense and fungus resistant, suitable for indoor and outdoor use.",
+        category: ["Hardwood", "Imported"],
+        features: ["Heavy Hardwood", "Fungus Resistant", "Indoor/Outdoor"],
         onSale: false,
-        price: 30,
-        image: "../TimberPhoto/pine.jpeg",
+        price: "LKR 100",
+        priceValue: 100,
+        image: "../TimberPhoto/kekatong.jpeg",
         specs: {
-            "Material": "Pine Wood",
-            "Dimensions": "2500mm x 200mm x 30mm",
-            "Moisture Content": "8-15%",
-            "Density": "Low to Medium",
-            "Origin": "Europe/North America"
+            "Scientific Name": "Cynometra spp.",
+            "Wood Type": "Heavy hardwood",
+            "Density": "Dense timber",
+            "Fungus Resistance": "Resistant to fungus",
+            "Versatility": "Indoor and outdoor use",
+            "Common Uses": "Flooring, heavy construction, decorative work"
         }
-    },
+    }
 ];
 
 let filteredProducts = [...products];
+
+// Mobile menu toggle function - This was missing in the original gallery page
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+}
 
 // Initialize the page
 function initializePage() {
@@ -297,7 +432,7 @@ function displayProducts(products) {
     `).join('');
 }
 
-// Apply filters with price range
+// Fixed apply filters function
 function applyFilters() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
     const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
@@ -307,10 +442,16 @@ function applyFilters() {
 
     filteredProducts = products.filter(product => {
         const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
-            product.description.toLowerCase().includes(searchTerm);
-        const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
+            product.description.toLowerCase().includes(searchTerm) ||
+            product.features.some(feature => feature.toLowerCase().includes(searchTerm));
+        
+        // Use priceValue for numeric comparison
+        const matchesPrice = product.priceValue >= minPrice && product.priceValue <= maxPrice;
+        
+        // Handle both string and array categories
+        const productCategories = Array.isArray(product.category) ? product.category : [product.category];
         const matchesCategory = selectedCategories.length === 0 ||
-            selectedCategories.some(category => product.category.includes(category));
+            selectedCategories.some(category => productCategories.includes(category));
 
         return matchesSearch && matchesPrice && matchesCategory;
     });
@@ -318,17 +459,17 @@ function applyFilters() {
     displayProducts(filteredProducts);
 }
 
-// Sort products with price options
+// Fixed sort products function
 function sortProducts() {
     const sortValue = document.getElementById('sortSelect').value;
     let sorted = [...filteredProducts];
     
     switch(sortValue) {
         case 'price-low':
-            sorted.sort((a, b) => a.price - b.price);
+            sorted.sort((a, b) => a.priceValue - b.priceValue);
             break;
         case 'price-high':
-            sorted.sort((a, b) => b.price - a.price);
+            sorted.sort((a, b) => b.priceValue - a.priceValue);
             break;
         case 'name-asc':
             sorted.sort((a, b) => a.name.localeCompare(b.name));
@@ -404,6 +545,16 @@ window.onclick = function(event) {
         closeModal();
     }
 }
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+    } else {
+        navbar.style.background = 'rgba(26, 26, 26, 0.9)';
+    }
+});
 
 // Initialize page when loaded
 document.addEventListener('DOMContentLoaded', initializePage);

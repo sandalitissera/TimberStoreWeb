@@ -9,15 +9,20 @@
     <script src="../js/gallery.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../html/aboutus.html">About Us</a></li>
             <li><a href="../html/gallery.html">Woods</a></li>
             <li><a href="../html/price&services.html">Price Range</a></li>
             <li><a href="../html/contactus.html">Contact Us</a></li>
         </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
     
     <div class="main-container">
@@ -178,6 +183,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
