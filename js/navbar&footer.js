@@ -52,9 +52,20 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Navbar scroll effect
+// // Navbar scroll effect
+// window.addEventListener('scroll', function() {
+//     const navbar = document.getElementById('navbar');
+//     if (window.scrollY > 50) {
+//         navbar.classList.add('scrolled');
+//     } else {
+//         navbar.classList.remove('scrolled');
+//     }
+// });
+
+// Add this JavaScript to handle the scroll effect
 window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
+    const navbar = document.querySelector('.navbar');
+    
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
@@ -62,11 +73,23 @@ window.addEventListener('scroll', function() {
     }
 });
 
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+// Optional: Add smooth scrolling for better UX
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for anchor links
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
