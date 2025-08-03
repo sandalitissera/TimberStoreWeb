@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/aboutus.css">
     <script src="../js/aboutus.js" defer></script>
+    <script src="../js/navbar.js" defer></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -19,7 +20,7 @@
             <li><a href="../html/price&services.html">Price Range</a></li>
             <li><a href="../html/contactus.html">Contact Us</a></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
@@ -27,11 +28,11 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="/index.html" onclick="toggleMenu()">Home</a>
-        <a href="./aboutus.html" onclick="toggleMenu()">About Us</a>
-        <a href="./gallery.html" onclick="toggleMenu()">Woods</a>
-        <a href="./price&services.html" onclick="toggleMenu()">Price Range</a>
-        <a href="./contactus.html" onclick="toggleMenu()">Contact Us</a>
+        <a href="../index.html" onclick="toggleMenu()">Home</a>
+        <a href="../html/aboutus.html" onclick="toggleMenu()">About Us</a>
+        <a href="../html/gallery.html" onclick="toggleMenu()">Woods</a>
+        <a href="../html/price&services.html" onclick="toggleMenu()">Price Range</a>
+        <a href="../html/contactus.html" onclick="toggleMenu()">Contact Us</a>
     </div>
 
     <section class="about-hero">

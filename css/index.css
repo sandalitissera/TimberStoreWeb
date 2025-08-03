@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +16,7 @@ body {
     top: 0;
     width: 100%;
     backdrop-filter: blur(10px);
+    background: rgba(26, 26, 26, 0.9);
     padding: 8px 50px;
     display: flex;
     justify-content: space-between;
@@ -27,6 +27,7 @@ body {
 
 .navbar.scrolled {
     padding: 10px 50px;
+    background: rgba(26, 26, 26, 0.95);
 }
 
 .logo {
@@ -57,10 +58,75 @@ body {
     color: #d4a574;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 66px;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #d4a574;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
 .hero-section {
     height: 100vh;
     background-size: cover;
-    background-image: url(/TimberStoreWeb/images/bg1.jpeg);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('../images/bg1.jpeg');
     background-position: center;
     display: flex;
     align-items: center;
@@ -68,15 +134,6 @@ body {
     position: relative;
 }
 
-/* Optional: Overlay for better text contrast */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* dark overlay */
-    z-index: 1;
-}
 .hero-content {
     z-index: 2;
     text-align: center;
@@ -117,77 +174,16 @@ body {
     box-shadow: 0 10px 20px rgba(212, 165, 116, 0.3);
 }
 
-.product-image {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.timber-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover .timber-image {
-    transform: scale(1.05);
-}
-
-.sale-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #c02814;
-    color: #ffffff;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    z-index: 2;
-}
-
-.product-card {
-    background: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .product-image {
-        height: 180px;
-    }
-    
-    .product-card {
-        padding: 20px;
-    }
-    
-}
-
 .products-section {
     padding: 100px 50px;
     background: #2a2a2a;
     position: relative;
-    text-align: center; /* Add this to center inline elements */
+    text-align: center;
 }
 
 .products-section .cta-button {
-    margin: 30px auto 0; /* Center the button with top margin */
-    display: inline-block; /* Ensure it's treated as inline-block for centering */
-    /* Remove the bottom and right positioning */
+    margin: 30px auto 0;
+    display: inline-block;
 }
 
 .section-title {
@@ -221,20 +217,43 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.product-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent, rgba(212, 165, 116, 0.1), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #654321, #8B4513);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
 }
 
-.product-card:hover::before {
-    opacity: 1;
+.timber-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .timber-image {
+    transform: scale(1.05);
+}
+
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #c02814;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
 }
 
 .product-title {
@@ -248,13 +267,6 @@ body {
     color: #cccccc;
     margin-bottom: 20px;
     line-height: 1.6;
-}
-
-.product-price {
-    font-size: 1.5rem;
-    color: #d4a574;
-    font-weight: 600;
-    margin-bottom: 20px;
 }
 
 .product-features {
@@ -271,6 +283,7 @@ body {
     border-radius: 15px;
     font-size: 0.8rem;
 }
+
 .gallery-section {
     padding: 100px 50px;
     background: #1a1a1a;
@@ -338,50 +351,6 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: #d4a574;
-}
-
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 70px;
-    right: 0;
-    background: rgba(0, 0, 0, 0.95);
-    width: 100%;
-    padding: 20px;
-    z-index: 999;
-}
-
-.mobile-menu a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 15px 0;
-    border-bottom: 1px solid #333;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #ffffff;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .footer {
@@ -541,6 +510,17 @@ body {
     font-weight: 500;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 20px;
@@ -551,6 +531,10 @@ body {
     }
 
     .hamburger {
+        display: flex;
+    }
+
+    .mobile-menu {
         display: flex;
     }
 
@@ -566,6 +550,11 @@ body {
     .gallery-section,
     .contact-section {
         padding: 50px 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .footer-content {
@@ -590,6 +579,22 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+
     .footer-content {
         gap: 30px;
     }

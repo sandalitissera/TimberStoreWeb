@@ -372,11 +372,45 @@ const products = [
 
 let filteredProducts = [...products];
 
-// Mobile menu toggle function - This was missing in the original gallery page
+// NAVBAR FUNCTIONALITY - ADD THIS SECTION
 function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('active');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    
+    // Toggle mobile menu visibility
+    if (mobileMenu.style.display === 'flex') {
+        mobileMenu.style.display = 'none';
+        hamburger.classList.remove('active');
+    } else {
+        mobileMenu.style.display = 'flex';
+        hamburger.classList.add('active');
+    }
 }
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.querySelector('.hamburger');
+    
+    // Check if click is outside navbar
+    if (!navbar.contains(event.target) && mobileMenu.style.display === 'flex') {
+        mobileMenu.style.display = 'none';
+        hamburger.classList.remove('active');
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    
+    // Hide mobile menu on desktop view
+    if (window.innerWidth > 768) {
+        mobileMenu.style.display = 'none';
+        hamburger.classList.remove('active');
+    }
+});
 
 // Initialize the page
 function initializePage() {
@@ -550,9 +584,9 @@ window.onclick = function(event) {
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(26, 26, 26, 0.9)';
+        navbar.classList.remove('scrolled');
     }
 });
 

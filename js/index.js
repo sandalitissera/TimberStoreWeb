@@ -1,3 +1,4 @@
+
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
@@ -22,19 +23,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mobile menu toggle
+// Mobile menu toggle - FIXED VERSION
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
+    const hamburger = document.getElementById('hamburger');
     
-    if (mobileMenu.style.display === 'flex') {
-        mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
-    } else {
-        mobileMenu.style.display = 'flex';
-        hamburger.classList.add('active');
-    }
+    // Toggle the active class on both elements
+    mobileMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
 }
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.querySelector('.navbar');
+    
+    // If click is outside navbar and menu is open, close it
+    if (!navbar.contains(event.target) && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
+
+// Close mobile menu when pressing Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.getElementById('hamburger');
+        
+        if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    }
+});
 
 // Product details
 function showProductDetails(productName) {

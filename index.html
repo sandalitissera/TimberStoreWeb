@@ -5,8 +5,8 @@
     <meta name="google-site-verification" content="F-g92e6II7m0HwKNyKJrz4CckfbxtTsCRxzbpG3nPz8" />
     <title>Sudharma Premium Timber Products</title>
     <link rel="icon" type="image/png" href="logo/logo1.png" />
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="jsfile" href="js/index.js">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js" defer></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -18,7 +18,7 @@
             <li><a href="./html/price&services.html">Price Range</a></li>
             <li><a href="./html/contactus.html">Contact Us</a></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
@@ -27,7 +27,7 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="./index.html" onclick="toggleMenu()">Home</a>
-        <a href="/html/aboutus.html" onclick="toggleMenu()">About Us</a>
+        <a href="./html/aboutus.html" onclick="toggleMenu()">About Us</a>
         <a href="./html/gallery.html" onclick="toggleMenu()">Woods</a>
         <a href="./html/price&services.html" onclick="toggleMenu()">Price Range</a>
         <a href="./html/contactus.html" onclick="toggleMenu()">Contact Us</a>
@@ -51,7 +51,6 @@
                 </div>
                 <h3 class="product-title">Ginisapu Timber</h3>
                 <p class="product-description">Premium Ginisapu wood known for its durability and beautiful grain pattern, ideal for high-end applications.</p>
-
                 <div class="product-features">
                     <span class="feature-tag">Durable</span>
                     <span class="feature-tag">Beautiful Grain</span>
@@ -66,21 +65,23 @@
                 </div>
                 <h3 class="product-title">Grandis Wood</h3>
                 <p class="product-description">Fast-growing Grandis eucalyptus timber, sustainable choice for various woodworking and construction needs.</p>
-
                 <div class="product-features">
                     <span class="feature-tag">Sustainable</span>
                     <span class="feature-tag">Fast-Growing</span>
                     <span class="feature-tag">Versatile</span>
                 </div>
+
+
+                
             </div>
             
             <div class="product-card" onclick="showProductDetails('Mahogany Wood')">
                 <div class="product-image">
                     <img src="./TimberPhoto/mahogani.webp" alt="Mahogany Wood" class="timber-image">
+                    <span class="sale-badge">ON SALE</span>
                 </div>
                 <h3 class="product-title">Mahogany Wood</h3>
                 <p class="product-description">Luxurious mahogany wood, perfect for fine furniture and cabinetry, known for its rich color and grain.</p>
-
                 <div class="product-features">
                     <span class="feature-tag">Luxurious</span>
                     <span class="feature-tag">Rich Color</span>
@@ -215,5 +216,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
