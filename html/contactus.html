@@ -5,33 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Sudharma Premium Timber Products</title>
     <link rel="icon" type="image/png" href="../logo/logo1.png" />
-    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/contactus.css">
+    <link rel="stylesheet" href="../css/navbar&footer.css">
     <script src="../js/contactus.js" defer></script>
-    <script src="../js/navbar.js" defer></script>
+    <script src="../js/navbar&footer.js" defer></script>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
-        <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../html/index.html">Home</a></li>
             <li><a href="../html/aboutus.html">About Us</a></li>
             <li><a href="../html/gallery.html">Woods</a></li>
             <li><a href="../html/price&services.html">Price Range</a></li>
             <li><a href="../html/contactus.html">Contact Us</a></li>
         </ul>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="../index.html" onclick="toggleMenu()">Home</a>
+        <a href="../html/index.html" onclick="toggleMenu()">Home</a>
         <a href="../html/aboutus.html" onclick="toggleMenu()">About Us</a>
         <a href="../html/gallery.html" onclick="toggleMenu()">Woods</a>
-        <a href="../html/price&services.html" onclick="toggleMenu()">Price Range</a>
+        <a href="../html/price&services.html" onclick="toggleMenu()">Pricing Range</a>
         <a href="../html/contactus.html" onclick="toggleMenu()">Contact Us</a>
     </div>
 
@@ -208,12 +211,13 @@
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <div class="logo">SUDHARMA TIMBER</div>
-                    <p class="footer-tagline">Crafting excellence in timber since 1985</p>
+                    <div class="logo"><img src="../logo/logo2.png" alt="Sudharma Timber Logo"></div>
+                    <p class="footer-tagline">Crafting excellence in timber since 1963</p>
                 </div>
                 <div class="social-links">
                     <a href="#" class="social-link" title="Facebook">📘</a>
@@ -222,18 +226,15 @@
                     <a href="#" class="social-link" title="YouTube">📺</a>
                 </div>
             </div>
-
             <div class="footer-section">
                 <h4 class="footer-title">Products</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html#products">Solid Wood Planks</a></li>
-                    <li><a href="index.html#products">Reclaimed Timber</a></li>
-                    <li><a href="index.html#products">Engineered Wood</a></li>
-                    <li><a href="index.html#products">Specialty Woods</a></li>
-                    <li><a href="index.html#products">Custom Millwork</a></li>
+                    <li><a href="#products">Hardwood Planks</a></li>
+                    <li><a href="#products">Softwood Timber</a></li>
+                    <li><a href="#products">Specialty Woods</a></li>
+                    <li><a href="#products">Custom Millwork</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h4 class="footer-title">Services</h4>
                 <ul class="footer-links">
@@ -244,29 +245,27 @@
                     <li><a href="#">Project Consultation</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h4 class="footer-title">Contact Info</h4>
                 <div class="contact-info">
                     <div class="contact-item">
                         <span class="contact-icon">📍</span>
                         <div>
-                            <p>123 Timber Lane</p>
-                            <p>Woodcraft District, WC 12345</p>
+                            <p>292/1/A, Welipillewa, Ganemulla</p>
+                            <p>WR 12094/TD 2571/AA</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">📞</span>
                         <div>
-                            <p>(555) 123-WOOD</p>
-                            <p>(555) 123-9663</p>
+                            <p>077-011 3070</p>
+                            <p>077-011 3074</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">📩</span>
                         <div>
-                            <p>info@sudharmatimber.com</p>
-                            <p>orders@sudharmatimber.com</p>
+                            <p>sudharmatimberdepot@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -278,7 +277,6 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="footer-bottom-content">
                 <div class="footer-bottom-left">

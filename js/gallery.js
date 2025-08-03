@@ -372,46 +372,6 @@ const products = [
 
 let filteredProducts = [...products];
 
-// NAVBAR FUNCTIONALITY - ADD THIS SECTION
-function toggleMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-    
-    // Toggle mobile menu visibility
-    if (mobileMenu.style.display === 'flex') {
-        mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
-    } else {
-        mobileMenu.style.display = 'flex';
-        hamburger.classList.add('active');
-    }
-}
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const navbar = document.getElementById('navbar');
-    const hamburger = document.querySelector('.hamburger');
-    
-    // Check if click is outside navbar
-    if (!navbar.contains(event.target) && mobileMenu.style.display === 'flex') {
-        mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
-    }
-});
-
-// Handle window resize
-window.addEventListener('resize', function() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-    
-    // Hide mobile menu on desktop view
-    if (window.innerWidth > 768) {
-        mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
-    }
-});
-
 // Initialize the page
 function initializePage() {
     displayProducts(products);
@@ -579,16 +539,6 @@ window.onclick = function(event) {
         closeModal();
     }
 }
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
 
 // Initialize page when loaded
 document.addEventListener('DOMContentLoaded', initializePage);
