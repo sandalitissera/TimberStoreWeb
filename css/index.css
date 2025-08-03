@@ -57,35 +57,6 @@ body {
 .nav-links a:hover {
     color: #d4a574;
 }
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #ffffff;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 3px;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -97,19 +68,19 @@ body {
     backdrop-filter: blur(10px);
     padding: 20px;
     z-index: 999;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid #333;
 }
 
 .mobile-menu.active {
-    transform: translateY(0);
+    display: flex !important;
 }
 
 .mobile-menu a {
     color: #ffffff;
     text-decoration: none;
     padding: 15px 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 1.1rem;
     transition: color 0.3s ease;
 }
@@ -120,6 +91,57 @@ body {
 
 .mobile-menu a:last-child {
     border-bottom: none;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background: #d4a574;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background: #d4a574;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: none; /* Initially hidden */
+    }
+    
+    .navbar {
+        padding: 15px 20px;
+    }
 }
 
 .hero-section {
@@ -518,97 +540,5 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .mobile-menu {
-        display: flex;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .products-section,
-    .gallery-section,
-    .contact-section {
-        padding: 50px 20px;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    .footer-bottom-content {
-        padding: 0 20px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-bottom-links {
-        justify-content: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-card {
-        padding: 20px;
-    }
-
-    .footer-content {
-        gap: 30px;
-    }
-
-    .footer-section h4.footer-title {
-        font-size: 1.1rem;
-    }
-
-    .contact-item {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .contact-icon {
-        align-self: flex-start;
     }
 }

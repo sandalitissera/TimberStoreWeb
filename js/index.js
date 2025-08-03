@@ -1,4 +1,3 @@
-
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
@@ -23,14 +22,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Mobile menu toggle - FIXED VERSION
+// Mobile menu toggle - COMPLETELY FIXED VERSION
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const hamburger = document.getElementById('hamburger');
     
-    // Toggle the active class on both elements
-    mobileMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    console.log('Toggle menu called'); // Debug log
+    
+    if (mobileMenu && hamburger) {
+        // Toggle the active class and display
+        if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
+        } else {
+            mobileMenu.classList.add('active');
+            hamburger.classList.add('active');
+            mobileMenu.style.display = 'flex';
+        }
+    } else {
+        console.error('Mobile menu or hamburger not found');
+    }
 }
 
 // Close mobile menu when clicking outside
@@ -40,9 +52,10 @@ document.addEventListener('click', function(event) {
     const navbar = document.querySelector('.navbar');
     
     // If click is outside navbar and menu is open, close it
-    if (!navbar.contains(event.target) && mobileMenu.classList.contains('active')) {
+    if (!navbar.contains(event.target) && mobileMenu && mobileMenu.classList.contains('active')) {
         mobileMenu.classList.remove('active');
         hamburger.classList.remove('active');
+        mobileMenu.style.display = 'none';
     }
 });
 
@@ -52,9 +65,24 @@ document.addEventListener('keydown', function(event) {
         const mobileMenu = document.getElementById('mobileMenu');
         const hamburger = document.getElementById('hamburger');
         
-        if (mobileMenu.classList.contains('active')) {
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
             mobileMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
+        }
+    }
+});
+
+// Close mobile menu when window is resized to desktop
+window.addEventListener('resize', function() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+    
+    if (window.innerWidth > 768) {
+        if (mobileMenu && hamburger) {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
         }
     }
 });
@@ -104,4 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+    
+    // Initialize mobile menu state
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu) {
+        mobileMenu.style.display = 'none';
+    }
 });
