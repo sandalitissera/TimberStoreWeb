@@ -187,12 +187,47 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    color: #ffffff;
 }
 
 .social-link:hover {
     background: #d4a574;
     border-color: #d4a574;
     transform: translateY(-3px);
+    color: #ffffff;
+}
+
+.social-link.facebook:hover {
+    background-color: #3b5998;
+    border-color: #3b5998;
+    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+}
+
+.social-link.whatsapp:hover {
+    background-color: #25d366;
+    border-color: #25d366; 
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); 
+}
+
+.social-link.linkedin:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4);
+}
+
+.social-link.youtube:hover {
+    background-color: #ff0000;
+    border-color: #ff0000 ;
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+/* Animation for social icons */
+.social-link i {
+    transition: all 0.3s ease;
+}
+
+.social-link:hover i {
+    transform: scale(1.2);
 }
 
 .footer-links {
@@ -291,49 +326,69 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
-/* Enhanced social media icon styling */
-.social-link {
-    position: relative;
-    color: #ffffff !important;
-    font-size: 1.1rem;
-}
-
-.social-link:hover {
-    color: #ffffff !important;
-    transform: translateY(-3px) scale(1.1);
-}
-
-.social-link.facebook:hover {
-    background: #1877f2;
-    border-color: #1877f2;
-    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
-}
-
-.social-link.whatsapp:hover {
-    background: #25d366;
-    border-color: #25d366;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-}
-
-.social-link.linkedin:hover {
-    background: #0077b5;
-    border-color: #0077b5;
-    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4);
-}
-
-.social-link.youtube:hover {
-    background: #ff0000;
-    border-color: #ff0000;
-    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
-}
-
-/* Animation for social icons */
-.social-link i {
+/* Scroll Button Styling */
+.scroll-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #d4a574, #e6b885);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
 }
 
-.social-link:hover i {
-    transform: scale(1.2);
+.scroll-btn:hover {
+    background: linear-gradient(135deg, #e6b885, #f2c896);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+}
+
+.scroll-btn:active {
+    transform: translateY(-1px) scale(1.05);
+}
+
+#scrollIcon {
+    transition: all 0.3s ease;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+/* Pulse animation when button first appears */
+.scroll-btn.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(212, 165, 116, 0.6);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .scroll-btn {
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 768px) {
