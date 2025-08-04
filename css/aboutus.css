@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 .about-hero {
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg2.jpeg');
@@ -197,7 +201,7 @@
     }
 
     .about-content {
-        padding: 50px 20px;
+        padding: 40px 15px;
     }
 
     .values-section,
@@ -214,7 +218,20 @@
         height: 40vh;
     }
 
-    .about-text h2 {
-        font-size: 2rem;
+    .about-text p{
+        font-size: 1rem;
     }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-grid,
+    .stats-grid,
+    .values-grid,
+    .team-grid {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
 }
