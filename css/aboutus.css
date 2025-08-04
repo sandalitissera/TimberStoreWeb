@@ -226,12 +226,5 @@ body{
         font-size: 1.8rem;
     }
 
-    .about-grid,
-    .stats-grid,
-    .values-grid,
-    .team-grid {
-        width: 100%;
-        overflow-x: hidden;
-    }
 
 }
