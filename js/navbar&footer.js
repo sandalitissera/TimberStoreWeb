@@ -1,7 +1,65 @@
-// NAVBAR FUNCTIONALITY
+// Navigation & Footer JavaScript - navbar-footer.js
+
+// ============================================
+// THEME TOGGLE FUNCTIONALITY
+// ============================================
+
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update icons
+    updateThemeIcons(newTheme);
+}
+
+function updateThemeIcons(theme) {
+    const icon = document.getElementById('themeIcon');
+    if (icon) {
+        if (theme === 'dark') {
+            icon.className = 'fas fa-moon';
+        } else {
+            icon.className = 'fas fa-sun';
+        }
+    }
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcons(savedTheme);
+    
+    // Initialize mobile menu state
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu) {
+        mobileMenu.style.display = 'none';
+    }
+    
+    // Add pulse animation to scroll button initially
+    const scrollButton = document.getElementById('scrollBtn');
+    if (scrollButton) {
+        scrollButton.classList.add('pulse');
+        
+        // Remove pulse after 6 seconds
+        setTimeout(() => {
+            scrollButton.classList.remove('pulse');
+        }, 6000);
+    }
+});
+
+// ============================================
+// MOBILE MENU FUNCTIONALITY
+// ============================================
+
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const hamburger = document.querySelector('.hamburger');
+    
+    if (!mobileMenu || !hamburger) return;
     
     // Toggle mobile menu visibility
     if (mobileMenu.style.display === 'flex') {
@@ -19,10 +77,14 @@ document.addEventListener('click', function(event) {
     const navbar = document.getElementById('navbar');
     const hamburger = document.querySelector('.hamburger');
     
+    if (!mobileMenu || !navbar) return;
+    
     // Check if click is outside navbar
     if (!navbar.contains(event.target) && mobileMenu.style.display === 'flex') {
         mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
+        if (hamburger) {
+            hamburger.classList.remove('active');
+        }
     }
 });
 
@@ -30,12 +92,13 @@ document.addEventListener('click', function(event) {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         const mobileMenu = document.getElementById('mobileMenu');
-        const hamburger = document.getElementById('hamburger');
+        const hamburger = document.querySelector('.hamburger');
         
-        if (mobileMenu && mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            hamburger.classList.remove('active');
+        if (mobileMenu && mobileMenu.style.display === 'flex') {
             mobileMenu.style.display = 'none';
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
         }
     }
 });
@@ -46,34 +109,34 @@ window.addEventListener('resize', function() {
     const hamburger = document.querySelector('.hamburger');
     
     // Hide mobile menu on desktop view
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 768 && mobileMenu) {
         mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
+        if (hamburger) {
+            hamburger.classList.remove('active');
+        }
     }
 });
 
-// // Navbar scroll effect
-// window.addEventListener('scroll', function() {
-//     const navbar = document.getElementById('navbar');
-//     if (window.scrollY > 50) {
-//         navbar.classList.add('scrolled');
-//     } else {
-//         navbar.classList.remove('scrolled');
-//     }
-// });
+// ============================================
+// NAVBAR SCROLL EFFECT
+// ============================================
 
-// Add this JavaScript to handle the scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
 });
 
-// Optional: Add smooth scrolling for better UX
+// ============================================
+// SMOOTH SCROLLING FOR ANCHOR LINKS
+// ============================================
+
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
     const links = document.querySelectorAll('a[href^="#"]');
@@ -87,12 +150,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetSection) {
                 targetSection.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
 });
+
+// ============================================
+// SCROLL BUTTON FUNCTIONALITY
+// ============================================
 
 let isAtBottom = false;
 let scrollButton = null;
@@ -102,14 +170,6 @@ let scrollIcon = null;
 document.addEventListener('DOMContentLoaded', function() {
     scrollButton = document.getElementById('scrollBtn');
     scrollIcon = document.getElementById('scrollIcon');
-    
-    // Add pulse animation initially
-    scrollButton.classList.add('pulse');
-    
-    // Remove pulse after 6 seconds
-    setTimeout(() => {
-        scrollButton.classList.remove('pulse');
-    }, 6000);
 });
 
 // Handle scroll button click
@@ -152,7 +212,7 @@ window.addEventListener('scroll', function() {
                 isAtBottom = false;
                 scrollIcon.innerHTML = '⬇️';
                 scrollButton.title = 'Go to Bottom';
-                scrollButton.style.background = 'linear-gradient(135deg, #d4a574, #e6b885)';
+                scrollButton.style.background = 'linear-gradient(135deg, var(--accent-color), var(--accent-hover))';
             }
         }
     } else {
@@ -161,7 +221,7 @@ window.addEventListener('scroll', function() {
             isAtBottom = false;
             scrollIcon.innerHTML = '⬇️';
             scrollButton.title = 'Go to Bottom';
-            scrollButton.style.background = 'linear-gradient(135deg, #d4a574, #e6b885)';
+            scrollButton.style.background = 'linear-gradient(135deg, var(--accent-color), var(--accent-hover))';
         }
     }
 });

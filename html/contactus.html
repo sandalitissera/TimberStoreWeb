@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Sudharma Premium Timber Products</title>
     <link rel="icon" type="image/png" href="../logo/logo1.png" />
-    <link rel="stylesheet" href="../css/contactus.css">
     <link rel="stylesheet" href="../css/navbar&footer.css">
-    <!-- Font Awesome for social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/contactus.css">
     <script src="../js/contactus.js" defer></script>
     <script src="../js/navbar&footer.js" defer></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -19,12 +21,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EP6LPX052J');
 </script>
 
 <body>
-
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
@@ -33,12 +33,17 @@
             <li><a href="../html/aboutus.html">About Us</a></li>
             <li><a href="../html/gallery.html">Woods</a></li>
             <li><a href="../html/price&services.html">Price Range</a></li>
-            <li><a href="../html/contactus.html">Contact Us</a></li>
+            <li><a href="../html/contactus.html" class="active">Contact Us</a></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-actions">
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -136,32 +141,28 @@
             <div class="contact-info-section">
                 <div class="contact-info-card">
                     <h3><span class="icon">📍</span> Visit Our Showroom</h3>
-                    <p>123 Timber Lane</p>
-                    <p>Woodcraft District, WC 12345</p>
-                    <p style="margin-top: 15px; color: #d4a574;">Come see our extensive selection of wood samples and finished projects in person. Our showroom features live-edge slabs, reclaimed pieces, and examples of our craftsmanship.</p>
+                    <p>292/1/A, Welipillewa, Ganemulla</p>
+                    <p>WR 12094/TD 2571/AA</p>
+                    <p style="margin-top: 15px;" class="card-description">Come see our extensive selection of wood samples and finished projects in person. Our showroom features live-edge slabs, reclaimed pieces, and examples of our craftsmanship.</p>
                 </div>
                 
                 <div class="contact-info-card">
                     <h3><span class="icon">📞</span> Call Us Direct</h3>
-                    <p><strong>Main Line:</strong> (555) 123-WOOD</p>
-                    <p><strong>Orders:</strong> (555) 123-9663</p>
-                    <p><strong>Emergency:</strong> (555) 123-HELP</p>
-                    <p style="margin-top: 15px; color: #d4a574;">Speak directly with our wood experts. We're here to answer questions about species selection, pricing, and project planning.</p>
+                    <p><strong>Main Line:</strong> 077-011 3070</p>
+                    <p><strong>Orders:</strong> 077-011 3074</p>
+                    <p style="margin-top: 15px;" class="card-description">Speak directly with our wood experts. We're here to answer questions about species selection, pricing, and project planning.</p>
                 </div>
                 
                 <div class="contact-info-card">
                     <h3><span class="icon">📩</span> Email Us</h3>
-                    <p><strong>General Info:</strong> info@sudharmatimber.com</p>
-                    <p><strong>Orders:</strong> orders@sudharmatimber.com</p>
-                    <p><strong>Quotes:</strong> quotes@sudharmatimber.com</p>
-                    <p style="margin-top: 15px; color: #d4a574;">For detailed quotes, please include your project specifications, timeline, and any reference images.</p>
+                    <p><strong>General Info:</strong> sudharmatimberdepot@gmail.com</p>
+                    <p style="margin-top: 15px;" class="card-description">For detailed quotes, please include your project specifications, timeline, and any reference images.</p>
                 </div>
                 
                 <div class="contact-info-card">
-                    <h3><span class="icon">💬</span> Live Chat Support</h3>
-                    <p>Available Monday - Friday: 9 AM - 6 PM</p>
-                    <p>Saturday: 10 AM - 4 PM</p>
-                    <p style="margin-top: 15px; color: #d4a574;">Get instant answers to quick questions through our website chat feature. Perfect for checking availability and getting fast quotes.</p>
+                    <h3><span class="icon">🕗</span> Business Hours</h3>
+                    <p>Monday - Sunday: 8:00 AM - 5:00 PM</p>
+                    <p style="margin-top: 15px;" class="card-description">Get instant answers to quick questions through our contact channels. Perfect for checking availability and getting fast quotes.</p>
                 </div>
             </div>
         </div>
@@ -170,7 +171,7 @@
     <section class="map-section">
         <div class="map-container">
             <h2 class="section-title">Find Us</h2>
-            <p style="color: #cccccc; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <p class="map-description">
                 Located in Sri Lanka, our facility houses our showroom, warehouse, and custom millwork shop. Easy parking and loading dock access available.
             </p>
             <div class="map-embed">
@@ -190,7 +191,7 @@
     <section class="hours-section">
         <div class="hours-container">
             <h2 class="section-title">Business Hours</h2>
-            <p style="color: #cccccc; margin-bottom: 40px;">We're open seven days a week to serve all your timber needs. Extended hours available for large commercial deliveries.</p>
+            <p class="hours-description">We're open seven days a week to serve all your timber needs. Extended hours available for large commercial deliveries.</p>
             
             <div class="hours-grid">
                 <div class="hours-card">
@@ -217,9 +218,9 @@
             
             <div class="emergency-contact">
                 <h3>🚨 Emergency & After Hours</h3>
-                <p><strong>Emergency Line:</strong> (555) 123-HELP</p>
-                <p>For urgent project needs, equipment breakdowns, or time-sensitive deliveries, our emergency line is monitored 24/7.</p>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #d4a574;">Additional fees may apply for after-hours service.</p>
+                <p><strong>Emergency Line:</strong> 077-011 3070</p>
+                <p>For urgent project needs, equipment breakdowns, or time-sensitive deliveries, our emergency line is monitored during business hours.</p>
+                <p class="emergency-note">Additional fees may apply for after-hours service.</p>
             </div>
         </div>
     </section>
@@ -300,19 +301,7 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <div class="footer-bottom-left">
-                    <p>&copy; 2025 Sudharma Timber Store. All rights reserved.</p>
-                    <div class="footer-bottom-links">
-                        <a href="../html/privacypolicy.html">Privacy Policy</a>
-                        <span>•</span>
-                        <a href="../html/termsofservices.html">Terms of Service</a>
-                        <span>•</span>
-                        <a href="../html/sustainability.html">Sustainability</a>
-                    </div>
-                </div>
-                <div class="footer-bottom-right">
-                    <p>🌱 Sustainably sourced • FSC Certified</p>
-                </div>
+                <p>&copy; 2026 Sudharma Timber Store. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -321,6 +310,5 @@
     <button id="scrollBtn" class="scroll-btn" onclick="handleScroll()" title="Go to Bottom">
         <span id="scrollIcon">⬇️</span>
     </button>
-
 </body>
 </html>

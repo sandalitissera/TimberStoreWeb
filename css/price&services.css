@@ -1,6 +1,57 @@
+/* Price & Services Page CSS - price&services.css */
+/* Theme Variables */
+:root[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --bg-tertiary: #3a3a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #999999;
+    --accent-color: #d4a574;
+    --accent-hover: #e6b885;
+    --card-bg: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
+    --navbar-bg: rgba(26, 26, 26, 0.6);
+    --navbar-scrolled: rgba(26, 26, 26, 0.8);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --hero-overlay: rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="light"] {
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #666666;
+    --accent-color: #b8834a;
+    --accent-hover: #d4a574;
+    --card-bg: linear-gradient(135deg, #fff9f0 0%, #fef5e7 100%);
+    --navbar-bg: rgba(255, 255, 255, 0.6);
+    --navbar-scrolled: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --hero-overlay: rgba(255, 255, 255, 0.3);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+}
+
+/* Hero Section */
 .hero-section {
     height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg2.jpeg');
+    background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('../images/bg2.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -13,6 +64,7 @@
     text-align: center;
     max-width: 800px;
     z-index: 2;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero-title {
@@ -20,22 +72,22 @@
     font-weight: 300;
     margin-bottom: 20px;
     letter-spacing: 2px;
-    background: linear-gradient(45deg, #d4a574, #e6b885);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: #cccccc;
+    color: var(--accent-color);
     margin-bottom: 30px;
     font-weight: 300;
 }
 
+/* Pricing Section */
 .pricing-section {
     padding: 80px 50px;
-    background: #2a2a2a;
+    background: var(--bg-secondary);
+    transition: background-color 0.3s ease;
 }
 
 .section-title {
@@ -43,7 +95,7 @@
     font-size: 3rem;
     font-weight: 300;
     margin-bottom: 50px;
-    color: #d4a574;
+    color: var(--accent-color);
 }
 
 .pricing-container {
@@ -59,26 +111,26 @@
 }
 
 .wood-type-card {
-    background: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(212, 165, 116, 0.2);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .wood-type-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(65, 52, 39, 0.2);
+    box-shadow: 0 15px 40px var(--shadow-color);
 }
 
 .wood-type-title {
     font-size: 1.8rem;
-    color: #d4a574;
+    color: var(--accent-color);
     margin-bottom: 20px;
     text-align: center;
     font-weight: 600;
-    border-bottom: 2px solid rgba(212, 165, 116, 0.3);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
 }
 
@@ -90,8 +142,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: var(--bg-tertiary);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -99,13 +150,13 @@ table {
 th, td {
     padding: 12px 8px;
     text-align: center;
-    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+    border-bottom: 1px solid var(--border-color);
     font-size: 0.9rem;
 }
 
 th {
-    background: linear-gradient(45deg, #d4a574, #b8925f);
-    color: #1a1a1a;
+    background: var(--accent-color);
+    color: var(--bg-primary);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -113,85 +164,89 @@ th {
 }
 
 td {
-    color: #ffffff;
+    color: var(--text-primary);
     transition: background 0.3s ease;
 }
 
 tr:hover td {
-    background: rgba(231, 226, 224, 0.3);
+    background: rgba(212, 165, 116, 0.1);
 }
 
-.teak-pricing{
-    margin-top: 40px;
+.teak-pricing {
+    margin-top: 20px;
 }
 
 .price-cell {
-    background: linear-gradient(135deg, #d4a574, #e6b885);
-    color: #1a1a1a;
+    background: var(--accent-color);
+    color: var(--bg-primary);
     font-weight: 700;
 }
 
 .currency {
-    color: #1a1a1a;
+    color: var(--bg-primary);
     font-weight: 600;
 }
 
+/* Services Section */
 .services-section {
     padding: 80px 50px;
-    background: #1a1a1a;
+    background: var(--bg-primary);
+    transition: background-color 0.3s ease;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-card {
-    background: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 40px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(212, 165, 116, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(212, 165, 116, 0.2);
+    box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 .service-icon {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #d4a574;
+    color: var(--accent-color);
 }
 
 .service-title {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 15px;
     font-weight: 600;
 }
 
 .service-description {
-    color: #cccccc;
+    color: var(--text-secondary);
     margin-bottom: 20px;
     line-height: 1.6;
 }
 
 .service-price {
     font-size: 1.3rem;
-    color: #d4a574;
+    color: var(--accent-color);
     font-weight: 600;
 }
 
+/* Notes Section */
 .notes-section {
     padding: 60px 50px;
-    background: #2a2a2a;
+    background: var(--bg-secondary);
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .notes-container {
@@ -200,19 +255,19 @@ tr:hover td {
     background: rgba(212, 165, 116, 0.1);
     border-radius: 15px;
     padding: 40px;
-    border-left: 5px solid #d4a574;
+    border-left: 5px solid var(--accent-color);
 }
 
 .notes-title {
     font-size: 1.8rem;
-    color: #d4a574;
+    color: var(--accent-color);
     margin-bottom: 20px;
     font-weight: 600;
 }
 
 .notes-list {
     text-align: left;
-    color: #cccccc;
+    color: var(--text-secondary);
     list-style: none;
 }
 
@@ -224,21 +279,30 @@ tr:hover td {
 
 .notes-list li:before {
     content: "•";
-    color: #d4a574;
+    color: var(--accent-color);
     font-weight: bold;
     position: absolute;
     left: 0;
 }
 
+/* Contact CTA Section */
 .contact-cta {
     padding: 60px 50px;
-    background: linear-gradient(135deg, #3a2820 0%, #2d1f18 100%);
+    background: var(--card-bg);
     text-align: center;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.cta-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 .cta-button {
-    background: linear-gradient(45deg, #d4a574, #e6b885);
-    color: #1a1a1a;
+    background: var(--accent-color);
+    color: var(--bg-primary);
     padding: 18px 50px;
     border: none;
     border-radius: 50px;
@@ -248,10 +312,114 @@ tr:hover td {
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin: 10px;
 }
 
 .cta-button:hover {
+    background: var(--accent-hover);
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(212, 165, 116, 0.4);
+}
+
+.cta-button.secondary-btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.cta-button.secondary-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .pricing-section,
+    .services-section,
+    .notes-section,
+    .contact-cta {
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .wood-types-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wood-type-card {
+        padding: 20px;
+    }
+
+    .wood-type-title {
+        font-size: 1.5rem;
+    }
+
+    th, td {
+        padding: 8px 4px;
+        font-size: 0.8rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    .notes-container {
+        padding: 30px 20px;
+    }
+
+    .cta-button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 40vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .wood-type-title {
+        font-size: 1.3rem;
+    }
+
+    th, td {
+        padding: 6px 2px;
+        font-size: 0.75rem;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .service-price {
+        font-size: 1.1rem;
+    }
 }

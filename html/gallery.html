@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudharma Timber Store - Gallery & Shop</title>
     <link rel="icon" type="image/png" href="../logo/logo1.png" />
-    <link rel="stylesheet" href="../css/gallery.css">
     <link rel="stylesheet" href="../css/navbar&footer.css">
-    <!-- Font Awesome for social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="../js/gallery.js" defer></script>
+    <link rel="stylesheet" href="../css/gallery.css">
     <script src="../js/navbar&footer.js" defer></script>
+    <script src="../js/gallery.js" defer></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -19,26 +20,29 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EP6LPX052J');
 </script>
 
 <body>
-
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <img src="../logo/logo2.png" alt="Timber Store Logo" class="logo-img">
         <ul class="nav-links" id="navLinks">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../html/aboutus.html">About Us</a></li>
-            <li><a href="../html/gallery.html">Woods</a></li>
+            <li><a href="../html/gallery.html" class="active">Woods</a></li>
             <li><a href="../html/price&services.html">Price Range</a></li>
             <li><a href="../html/contactus.html">Contact Us</a></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-actions">
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -108,21 +112,6 @@
                 No products found matching your criteria.
             </div>
         </main>
-    </div>
-
-    <!-- Product Detail Modal -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="modal-image" id="modalImage"></div>
-            <h2 class="modal-title" id="modalTitle"></h2>
-            <p class="modal-description" id="modalDescription"></p>
-            <div class="modal-price" id="modalPrice">
-                <span class="current-price" id="modalCurrentPrice"></span>
-                <span class="original-price" id="modalOriginalPrice" style="display: none;"></span>
-            </div>
-            <div class="specifications" id="modalSpecs"></div>
-        </div>
     </div>
 
     <!-- Footer Section -->
@@ -201,23 +190,11 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <div class="footer-bottom-left">
-                    <p>&copy; 2025 Sudharma Timber Store. All rights reserved.</p>
-                    <div class="footer-bottom-links">
-                        <a href="../html/privacypolicy.html">Privacy Policy</a>
-                        <span>•</span>
-                        <a href="../html/termsofservices.html">Terms of Service</a>
-                        <span>•</span>
-                        <a href="../html/sustainability.html">Sustainability</a>
-                    </div>
-                </div>
-                <div class="footer-bottom-right">
-                    <p>🌱 Sustainably sourced • FSC Certified</p>
-                </div>
+                <p>&copy; 2026 Sudharma Timber Store. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+    
     <!-- Scroll Navigation Button -->
     <button id="scrollBtn" class="scroll-btn" onclick="handleScroll()" title="Go to Bottom">
         <span id="scrollIcon">⬇️</span>

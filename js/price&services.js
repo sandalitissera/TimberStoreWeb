@@ -31,16 +31,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(26, 26, 26, 0.9)';
-    }
-});
-
 // Add animation on scroll
 const observerOptions = {
     threshold: 0.1,
@@ -67,26 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Mobile menu toggle
-function toggleMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-    
-    if (mobileMenu.style.display === 'flex') {
-        mobileMenu.style.display = 'none';
-        hamburger.classList.remove('active');
-    } else {
-        mobileMenu.style.display = 'flex';
-        hamburger.classList.add('active');
-    }
-}
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
